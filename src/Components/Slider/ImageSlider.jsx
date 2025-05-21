@@ -26,7 +26,8 @@ const ImageSlider = () => {
     ];
 
     return (
-        <div className="w-full relative container mx-auto">
+        <div className='bg-base-100 '>
+            <div className="w-full relative container mx-auto md:pt-10">
 
             <Slider {...settings}>
                 {images.map((url, idx) => (
@@ -52,6 +53,7 @@ const ImageSlider = () => {
                 </p>
             </div>
 
+        </div>
         </div>
     );
 };
