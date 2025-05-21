@@ -1,10 +1,8 @@
-// src/context/AuthContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth, googleProvider } from "../firebase";
- // Adjust path based on where your firebase.js is
 
-const AuthContext = createContext();
+export const AuthContext = createContext(); // ✅ ADD THIS EXPORT
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -28,11 +26,10 @@ export const AuthProvider = ({ children }) => {
   const logout = () => signOut(auth);
 
   return (
-    <AuthContext.Provider value={{ user, loginWithEmail, loginWithGoogle, logout }}>
+    <AuthContext.Provider value={{ user, loading, loginWithEmail, loginWithGoogle, logout }}>
       {!loading && children}
     </AuthContext.Provider>
   );
 };
-
 
 export const useAuth = () => useContext(AuthContext);
