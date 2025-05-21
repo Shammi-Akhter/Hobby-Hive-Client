@@ -11,16 +11,16 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center  ">
                     <ul className="menu menu-horizontal px-1 lg:flex lg:flex-row gap-5 ">
-                        <NavLink className='text-blue-500 lg:font-bold hover: cursor-pointer'>Home</NavLink>
-                        <NavLink className='text-blue-500 lg:font-bold hover: cursor-pointer'>All Groups</NavLink>                       
-                        <NavLink className='text-blue-500 lg:font-bold hover: cursor-pointer'> My groups </NavLink>
-                        <NavLink className='text-blue-500 lg:font-bold hover: cursor-pointer'> Create groups </NavLink>
+                        <NavLink to='/' className='text-blue-500 lg:font-bold hover: cursor-pointer'>Home</NavLink>
+                        <NavLink to='/all-groups' className='text-blue-500 lg:font-bold hover: cursor-pointer'>All Groups</NavLink>                       
+                        <NavLink to='/my-groups' className='text-blue-500 lg:font-bold hover: cursor-pointer'> My groups </NavLink>
+                        <NavLink to='/create-groups' className='text-blue-500 lg:font-bold hover: cursor-pointer'> Create groups </NavLink>
 
                     </ul>
                 </div>
                 <div className="navbar-end lg:flex gap-4 ">
-               <NavLink className='btn cursor-pointer bg-blue-400 text-white rounded-3xl'> Log In</NavLink>
-               <NavLink className='btn cursor-pointer bg-blue-400 text-white rounded-3xl'> Register</NavLink>
+               <NavLink to='/login' className='btn cursor-pointer bg-blue-400 text-white rounded-3xl'> Log In</NavLink>
+               
               
                 </div>
             </div>
