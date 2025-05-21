@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-
-import toast, { Toaster } from "react-hot-toast";
+import { createUserWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../../firebase";
+import { FcGoogle } from "react-icons/fc";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+import toast, { Toaster } from "react-hot-toast";
+
+const provider = new GoogleAuthProvider();
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -13,6 +17,7 @@ const Register = () => {
     password: "",
   });
 
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,25 +29,15 @@ const Register = () => {
     const hasLowerCase = /[a-z]/.test(password);
     const isLongEnough = password.length >= 6;
 
-    if (!hasUpperCase) {
-      toast.error("Password must contain at least one uppercase letter.");
+    if (!hasUpperCase || !hasLowerCase || !isLongEnough) {
+      toast.error("Password must include upper, lower case and 6+ characters.");
       return false;
     }
-    if (!hasLowerCase) {
-      toast.error("Password must contain at least one lowercase letter.");
-      return false;
-    }
-    if (!isLongEnough) {
-      toast.error("Password must be at least 6 characters long.");
-      return false;
-    }
-
     return true;
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
     if (!validatePassword(form.password)) return;
 
     try {
@@ -51,12 +46,10 @@ const Register = () => {
         form.email,
         form.password
       );
-
       await updateProfile(userCredential.user, {
         displayName: form.name,
         photoURL: form.photoURL,
       });
-
       toast.success("Registered successfully!");
       navigate("/");
     } catch (error) {
@@ -64,60 +57,94 @@ const Register = () => {
     }
   };
 
+  const handleGoogle = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      toast.success("Google Sign-up successful!");
+      navigate("/");
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded shadow-md bg-white">
+    <>
+      <Helmet>
+        <title>Register | FindFest</title>
+      </Helmet>
       <Toaster position="top-right" />
-      <h2 className="text-2xl font-semibold mb-4">Register</h2>
-      <form onSubmit={handleRegister} className="space-y-4">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={form.name}
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-          required
-        />
-        <input
-          type="text"
-          name="photoURL"
-          placeholder="Photo URL"
-          value={form.photoURL}
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          className="w-full border p-2 rounded"
-          required
-        />
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-        >
-          Register
-        </button>
-      </form>
-      <p className="mt-4 text-center text-sm">
-        Already have an account?{" "}
-        <Link to="/login" className="text-blue-500 underline">
-          Login
-        </Link>
-      </p>
-    </div>
+      <div className="flex justify-center items-center lg:min-h-screen lg:my-0 lg:mx-0 my-8 mx-4 bg-gradient-to-br from-pink-100 to-purple-200">
+        <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-center text-purple-600 mb-6">Register</h2>
+          <form onSubmit={handleRegister} className="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+            <input
+              type="text"
+              name="photoURL"
+              placeholder="Photo URL"
+              value={form.photoURL}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400"
+            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 pr-10"
+              />
+              <span
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 rounded-xl transition duration-200"
+            >
+              Register
+            </button>
+          </form>
+          <div className="my-4 text-center text-gray-500">or</div>
+          <button
+            onClick={handleGoogle}
+            type="button"
+            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transition duration-200"
+          >
+            <FcGoogle size={24} />
+            <span>Sign up with Google</span>
+          </button>
+          <p className="mt-6 text-center text-sm text-gray-600">
+            Already have an account?{" "}
+            <Link to="/login" className="text-purple-500 hover:underline">
+              Login
+            </Link>
+          </p>
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -1,10 +1,9 @@
-
 import { useState } from "react";
-
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { useAuth } from "../../context/AuthContext";
-
+import { FcGoogle } from "react-icons/fc";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { loginWithEmail, loginWithGoogle } = useAuth();
@@ -36,47 +35,61 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded">
-      <h2 className="text-2xl mb-4">Login</h2>
-      <form onSubmit={handleEmailLogin} className="space-y-4">
-        <input
-          type="email"
-          className="w-full p-2 border rounded"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          className="w-full p-2 border rounded"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white p-2 rounded"
-        >
-          Login
-        </button>
-      </form>
-      <button
-        onClick={handleGoogleLogin}
-        className="w-full mt-4 bg-red-600 text-white p-2 rounded"
-      >
-        Sign in with Google
-      </button>
-      <p className="mt-4 text-center">
-        Don't have an account?{" "}
-        <Link to="/register" className="text-blue-500 underline">
-          Register
-        </Link>
-      </p>
-    </div>
+    <>
+      <Helmet>
+        <title>Login | YourApp</title>
+      </Helmet>
+      <div className="flex justify-center items-center lg:min-h-screen lg:my-0 lg:mx-0 my-8 mx-4 bg-gradient-to-br from-indigo-100 to-base-100">
+        <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-center text-indigo-600 mb-6">Login</h2>
+          <form onSubmit={handleEmailLogin} className="space-y-4">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Email"
+              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Password"
+              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            />
+            <button
+              type="submit"
+              className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 rounded-xl transition duration-200"
+            >
+              Login
+            </button>
+          </form>
+
+          <div className="my-4 text-center text-gray-500">or</div>
+
+          <button
+            onClick={handleGoogleLogin}
+            type="button"
+            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transition duration-200"
+          >
+            <FcGoogle size={24} />
+            <span>Login with Google</span>
+          </button>
+
+          <p className="mt-6 text-center text-sm text-gray-600">
+            Don't have an account?{" "}
+            <Link to="/register" className="text-indigo-500 hover:underline">
+              Register
+            </Link>
+          </p>
+
+         
+        </div>
+      </div>
+    </>
   );
 };
-
 
 export default Login;

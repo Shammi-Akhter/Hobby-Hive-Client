@@ -17,6 +17,10 @@ import MyGroupPage from './Components/MyGroupPage/MyGroupPage.jsx';
 import CreateGroup from './Components/CreateGroup/CreateGroup.jsx';
 import UpdateGroup from './Components/UpdateGroup/UpdateGroup.jsx';
 import AllGroupPage from './Components/AllGroupPage/AllGroupPage.jsx';
+import { HelmetProvider } from 'react-helmet-async';
+import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
+import ErrorPage from './Components/ErrorPage/errorPage.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 
 const router  = createBrowserRouter([
@@ -53,15 +57,27 @@ const router  = createBrowserRouter([
          path:'/all-groups',
          element:<AllGroupPage/>
       },
+      {
+         path:'/featured-group',
+         element:<FeaturedGroup/>
+      },
+      {
+         path:'*',
+         element:<ErrorPage/>
+      },
       
     ]
   }
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
+    <ThemeProvider>
+      <HelmetProvider>
+      <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
     </AuthProvider>
+    </HelmetProvider>
+    </ThemeProvider>
     
   </StrictMode>,
 )
