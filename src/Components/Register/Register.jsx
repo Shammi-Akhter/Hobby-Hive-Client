@@ -51,15 +51,11 @@ const Register = () => {
         photoURL: form.photoURL,
       });
 
-
       await signOut(auth);
-
       toast.success("Registered successfully!");
-
-
       setTimeout(() => {
         navigate("/login");
-      }, 500);
+      }, 100);
     } catch (error) {
       toast.error(error.message);
     }

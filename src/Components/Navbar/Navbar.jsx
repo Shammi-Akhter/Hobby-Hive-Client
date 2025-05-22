@@ -13,7 +13,7 @@ const Navbar = () => {
 
             <div className="container mx-auto navbar lg:flex">
                 <div className="navbar-start">
-                    <Link to='/' ><img className='lg:w-[200px] sm:w-[100px]' src="https://i.postimg.cc/QMkgVJbf/logo-2.png" alt="" /></Link>
+                    <Link to='/' ><img className='lg:w-[200px] sm:w-[100px]' src="https://i.postimg.cc/13DzgNM7/Logo-hobbyhive.png" alt="" /></Link>
 
                 </div>
 
@@ -22,12 +22,12 @@ const Navbar = () => {
                         <NavLink to="/" className="cursor-pointer text-blue-600 md:font-bold">Home</NavLink>
                         <NavLink
                             to="/all-groups"
-                            className="cursor-pointer text-blue-600 md:font-bold"
+                            className="cursor-pointer text-amber-400 md:font-bold"
                         >
                             All Groups
                         </NavLink>
                         {user && <NavLink to="/my-group-page" className="cursor-pointer text-blue-600 md:font-bold">My Group's Page</NavLink>}
-                        {user && <NavLink to="/create-group" className="cursor-pointer text-blue-600 md:font-bold">Create Group</NavLink>}
+                        {user && <NavLink to="/create-group" className="cursor-pointer text-amber-400 md:font-bold">Create Group</NavLink>}
                         {user && <NavLink to="/update-group" className="cursor-pointer text-blue-600 md:font-bold">Update Group</NavLink>}
                     </ul>
                 </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
                                     {user.displayName}
                                 </span>
                             </div>
-                            <button onClick={logout} className="btn btn-sm bg-blue-400 text-white rounded-2xl">
+                            <button onClick={logout} className="btn btn-sm bg-amber-500 text-white rounded-2xl">
                                 Logout
                             </button>
                         </>

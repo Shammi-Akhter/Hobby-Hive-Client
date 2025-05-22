@@ -5,23 +5,23 @@ const Footer = () => {
     return (
         <div className=' bg-base-100' >
             <footer className="footer container mx-auto sm:footer-horizontal text-base-content lg:px-20 lg:py-10">
+                <nav className='md:pt-10 md:pl-10'>
+                <img className='lg:w-[200px] sm:w-[100px]' src="https://i.postimg.cc/13DzgNM7/Logo-hobbyhive.png" alt="" />
+                </nav>
+
                 <nav>
-                    <h6 className="footer-title text-blue-400">Get Inspired</h6>
+                    <h6 className="footer-title text-blue-400 text-lg font-semibold">Get Inspired</h6>
                     <a href='https://www.hobbycraft.co.uk/ideas/' target='blank' className="link link-hover">Creative DIY Projects</a>
                     <a href='https://photographylife.com/photography-ideas' target='blank' className="link link-hover">Photography Ideas</a>
-                    <a href='https://www.gardendesign.com/ideas/'  target='blank'  className="link link-hover">Home Gardening</a>
-                    <a href='https://www.craftsy.com/'  target='blank' className="link link-hover">Art & Craft Tutorials</a>
-                </nav>
+                    <a href='https://www.gardendesign.com/ideas/' target='blank' className="link link-hover">Home Gardening</a>
+                    <a href='https://www.craftsy.com/' target='blank' className="link link-hover">Art & Craft Tutorials</a>
 
+                </nav>
                 <nav>
-                    <h6 className="footer-title text-blue-400">Search to know</h6>
+                    <h6 className="footer-title text-blue-400 text-lg font-semibold">Search to know</h6>
                     <NavLink to='/about-us'>About Us</NavLink>
-                    
-
-
-                </nav>
-                <nav>
-                    <h6 className="footer-title text-blue-400">Find Us</h6>
+                    <br />
+                    <h6 className="footer-title text-blue-400 text-lg font-semibold">Find Us</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a href="https://twitter.com/"
                             target="_blank"

@@ -7,7 +7,7 @@ const AboutUs = () => {
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">
           Discover&nbsp;
-          <span className="text-cyan-400">
+          <span className="text-amber-400">
             <Typewriter
               words={['Hobbies', 'Communities', 'Passions', 'Connections']}
               loop={0} // 0 = infinite
