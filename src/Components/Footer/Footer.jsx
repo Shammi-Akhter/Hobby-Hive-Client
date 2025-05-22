@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
@@ -6,16 +7,16 @@ const Footer = () => {
             <footer className="footer container mx-auto sm:footer-horizontal text-base-content lg:px-20 lg:py-10">
                 <nav>
                     <h6 className="footer-title text-blue-400">Get Inspired</h6>
-                    <a className="link link-hover">Creative DIY Projects</a>
-                    <a className="link link-hover">Photography Ideas</a>
-                    <a className="link link-hover">Home Gardening</a>
-                    <a className="link link-hover">Art & Craft Tutorials</a>
+                    <a href='https://www.hobbycraft.co.uk/ideas/' target='blank' className="link link-hover">Creative DIY Projects</a>
+                    <a href='https://photographylife.com/photography-ideas' target='blank' className="link link-hover">Photography Ideas</a>
+                    <a href='https://www.gardendesign.com/ideas/'  target='blank'  className="link link-hover">Home Gardening</a>
+                    <a href='https://www.craftsy.com/'  target='blank' className="link link-hover">Art & Craft Tutorials</a>
                 </nav>
 
                 <nav>
                     <h6 className="footer-title text-blue-400">Search to know</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
+                    <NavLink to='/about-us'>About Us</NavLink>
+                    
 
 
                 </nav>

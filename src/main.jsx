@@ -20,63 +20,71 @@ import AllGroupPage from './Components/AllGroupPage/AllGroupPage.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
 import ErrorPage from './Components/ErrorPage/errorPage.jsx';
+import AboutUs from './Components/AboutUs/AboutUs.jsx';
 
 
-const router  = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Root></Root>,
     children: [
       {
-        path:'/',
-        element:<Home/>
+        path: '/',
+        element: <Home />
       },
       {
-        path:'/login',
-        element:         
-          <Login/>
+        path: '/login',
+        element:
+          <Login />
       },
       {
-         path:'/register',
-         element: <Register/>
+        path: '/register',
+        element: <Register />
       },
       {
-         path:'/my-group-page',
-         element: <MyGroupPage/>
+        path: '/my-group-page',
+        element: <MyGroupPage />
       },
       {
-         path:'/create-group',
-         element: <CreateGroup/>
+        path: '/create-group',
+        element: <CreateGroup />
       },
       {
-         path:'/update-group',
-         element:<UpdateGroup/>
+        path: '/update-group',
+        element: <UpdateGroup />
       },
       {
-         path:'/all-groups',
-         element:<AllGroupPage/>
+        path: '/all-groups',
+        element: <AllGroupPage />
       },
       {
-         path:'/featured-group',
-         element:<FeaturedGroup/>
+        path: '/featured-group',
+        element: <FeaturedGroup />
       },
       {
-         path:'*',
-         element:<ErrorPage/>
+        path: '/about-us',
+        element: <AboutUs/>
       },
-      
-    ]
+
+    ],
+    errorElement: <ErrorPage />
+  },
+
+  {
+    path: '*',
+    element: <ErrorPage />
   }
+
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   
-      <HelmetProvider>
+
+    <HelmetProvider>
       <AuthProvider>
-      <RouterProvider router={router}></RouterProvider>
-    </AuthProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </AuthProvider>
     </HelmetProvider>
 
-    
+
   </StrictMode>,
 )

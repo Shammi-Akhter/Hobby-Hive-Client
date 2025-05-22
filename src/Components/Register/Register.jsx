@@ -37,33 +37,33 @@ const Register = () => {
   };
 
   const handleRegister = async (e) => {
-  e.preventDefault();
-  if (!validatePassword(form.password)) return;
+    e.preventDefault();
+    if (!validatePassword(form.password)) return;
 
-  try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      form.email,
-      form.password
-    );
-    await updateProfile(userCredential.user, {
-  displayName: form.name,
-  photoURL: form.photoURL,
-});
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        form.email,
+        form.password
+      );
+      await updateProfile(userCredential.user, {
+        displayName: form.name,
+        photoURL: form.photoURL,
+      });
 
-// Force logout so user goes to login page manually
-await signOut(auth);
 
-toast.success("Registered successfully!");
+      await signOut(auth);
 
-// Delay to show toast, then navigate
-setTimeout(() => {
-  navigate("/login");
-}, 1500); // 1.5 second delay
-  } catch (error) {
-    toast.error(error.message);
-  }
-};
+      toast.success("Registered successfully!");
+
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 500);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
 
   const handleGoogle = async () => {
@@ -79,7 +79,7 @@ setTimeout(() => {
   return (
     <>
       <Helmet>
-        <title>Register | FindFest</title>
+        <title>Register | HobbyHive</title>
       </Helmet>
       <Toaster position="top-right" />
       <div className="flex justify-center items-center lg:min-h-screen lg:my-0 lg:mx-0 my-8 mx-4 bg-gradient-to-br from-pink-100 to-purple-200">
