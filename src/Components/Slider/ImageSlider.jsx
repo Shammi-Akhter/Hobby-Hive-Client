@@ -18,7 +18,7 @@ const ImageSlider = () => {
     };
 
     const images = [
-        "https://i.postimg.cc/8chYwyb1/slide-01.jpg",
+        "https://i.postimg.cc/bNshBkhs/slide-1.jpg",
         "https://i.postimg.cc/qBnWkRH9/slider-2.webp",
         "https://i.postimg.cc/9QXktYwh/slider-3.jpg",
         "https://i.postimg.cc/gjqyNxJX/slide-4.webp",

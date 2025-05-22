@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
-import ThemeToggle from '../ThemeToggle';
+
 
 
 
@@ -58,9 +58,7 @@ const Navbar = () => {
                             <Link to="/register" className="btn rounded-2xl bg-blue-400 text-white">Register</Link>
                         </>
                     )}
-                    <div className="p-4 flex justify-end">
-                        <ThemeToggle />
-                    </div>
+                    
                 </div>
 
 

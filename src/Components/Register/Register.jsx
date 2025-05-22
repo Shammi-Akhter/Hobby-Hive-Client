@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import toast, { Toaster } from "react-hot-toast";
-
+import { signOut } from "firebase/auth";
 const provider = new GoogleAuthProvider();
 
 const Register = () => {
@@ -37,25 +37,34 @@ const Register = () => {
   };
 
   const handleRegister = async (e) => {
-    e.preventDefault();
-    if (!validatePassword(form.password)) return;
+  e.preventDefault();
+  if (!validatePassword(form.password)) return;
 
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        form.email,
-        form.password
-      );
-      await updateProfile(userCredential.user, {
-        displayName: form.name,
-        photoURL: form.photoURL,
-      });
-      toast.success("Registered successfully!");
-      navigate("/");
-    } catch (error) {
-      toast.error(error.message);
-    }
-  };
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      form.email,
+      form.password
+    );
+    await updateProfile(userCredential.user, {
+  displayName: form.name,
+  photoURL: form.photoURL,
+});
+
+// Force logout so user goes to login page manually
+await signOut(auth);
+
+toast.success("Registered successfully!");
+
+// Delay to show toast, then navigate
+setTimeout(() => {
+  navigate("/login");
+}, 1500); // 1.5 second delay
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
 
   const handleGoogle = async () => {
     try {

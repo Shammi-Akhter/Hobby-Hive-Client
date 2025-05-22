@@ -20,7 +20,6 @@ import AllGroupPage from './Components/AllGroupPage/AllGroupPage.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
 import ErrorPage from './Components/ErrorPage/errorPage.jsx';
-import { ThemeProvider } from './context/ThemeContext.jsx';
 
 
 const router  = createBrowserRouter([
@@ -71,13 +70,13 @@ const router  = createBrowserRouter([
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ThemeProvider>
+   
       <HelmetProvider>
       <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
     </AuthProvider>
     </HelmetProvider>
-    </ThemeProvider>
+
     
   </StrictMode>,
 )
