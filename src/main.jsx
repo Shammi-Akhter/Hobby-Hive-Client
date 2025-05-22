@@ -21,6 +21,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
 import ErrorPage from './Components/ErrorPage/errorPage.jsx';
 import AboutUs from './Components/AboutUs/AboutUs.jsx';
+import GroupDetailespage from './Components/GroupDetailsPage/GroupDetailsPage.jsx';
+import GroupDetailsPage from './Components/GroupDetailsPage/GroupDetailsPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -61,11 +63,18 @@ const router = createBrowserRouter([
         path: '/featured-group',
         element: <FeaturedGroup />
       },
+      
       {
         path: '/about-us',
         element: <AboutUs/>
       },
-
+      {
+        path: '/group-details-page/:id',
+        element: (<PrivateRoute>
+        <GroupDetailsPage/>
+        </PrivateRoute>)
+      },
+    
     ],
     errorElement: <ErrorPage />
   },

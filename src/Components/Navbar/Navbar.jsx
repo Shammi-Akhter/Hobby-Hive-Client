@@ -5,7 +5,9 @@ import { AuthContext } from '../../context/AuthContext';
 
 
 
+
 const Navbar = () => {
+    
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, loading, logout } = useContext(AuthContext);
     return (
@@ -30,6 +32,7 @@ const Navbar = () => {
                         {user && <NavLink to="/create-group" className="cursor-pointer text-amber-400 md:font-bold">Create Group</NavLink>}
                         {user && <NavLink to="/update-group" className="cursor-pointer text-blue-600 md:font-bold">Update Group</NavLink>}
                     </ul>
+                  
                 </div>
 
 

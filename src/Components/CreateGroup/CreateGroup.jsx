@@ -21,7 +21,7 @@ const CreateGroup = () => {
         location: '',
         maxMembers: '',
         startDate: '',
-        imageUrl: '',
+        image: '',
         userName: '',
         userEmail: ''
     });
@@ -58,7 +58,7 @@ const CreateGroup = () => {
 
             if (res.ok) {
                 alert('Group created successfully!');
-                // Reset form
+                
                 setFormData({
                     groupName: '',
                     category: '',
@@ -66,7 +66,7 @@ const CreateGroup = () => {
                     location: '',
                     maxMembers: '',
                     startDate: '',
-                    imageUrl: '',
+                    image: '',
                     userName: user.displayName || '',
                     userEmail: user.email || ''
                 });

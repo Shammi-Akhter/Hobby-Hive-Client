@@ -23,7 +23,7 @@ const Root = () => {
   }, [navigation.state]);
 
   return (
-    <div>
+  <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
       <Navbar />
       {showSpinner && <Spinner />}
       <Outlet />
