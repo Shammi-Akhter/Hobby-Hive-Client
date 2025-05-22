@@ -10,7 +10,7 @@ const AboutUs = () => {
           <span className="text-amber-400">
             <Typewriter
               words={['Hobbies', 'Communities', 'Passions', 'Connections']}
-              loop={0} // 0 = infinite
+              loop={0}
               cursor
               cursorStyle="_"
               typeSpeed={80}

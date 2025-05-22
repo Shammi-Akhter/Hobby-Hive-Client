@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
-import { Outlet, useNavigation } from 'react-router';
+import { Outlet, useLocation } from 'react-router';
 import Spinner from '../Components/Spinner/Spinner';
+import { Toaster } from 'react-hot-toast';
 
 const Root = () => {
-  const navigation = useNavigation();
-  const [showSpinner, setShowSpinner] = useState(false);
+  const location = useLocation();
+   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    let timeout;
-
-    if (navigation.state === 'loading') {
-      // Show spinner only after 200ms to avoid flashing
-      timeout = setTimeout(() => setShowSpinner(true), 200);
-    } else {
-      setShowSpinner(false);
-      clearTimeout(timeout);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [navigation.state]);
+  setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500); 
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
   <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    <Toaster/>
       <Navbar />
-      {showSpinner && <Spinner />}
+       {loading && (
+        <div className="fixed inset-0 z-50 bg-white/70 flex items-center justify-center">
+          <div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
       <Outlet />
       <Footer />
     </div>

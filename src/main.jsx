@@ -18,11 +18,11 @@ import CreateGroup from './Components/CreateGroup/CreateGroup.jsx';
 import UpdateGroup from './Components/UpdateGroup/UpdateGroup.jsx';
 import AllGroupPage from './Components/AllGroupPage/AllGroupPage.jsx';
 import { HelmetProvider } from 'react-helmet-async';
-import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
 import ErrorPage from './Components/ErrorPage/errorPage.jsx';
 import AboutUs from './Components/AboutUs/AboutUs.jsx';
-import GroupDetailespage from './Components/GroupDetailsPage/GroupDetailsPage.jsx';
 import GroupDetailsPage from './Components/GroupDetailsPage/GroupDetailsPage.jsx';
+import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
+import { Toaster } from 'react-hot-toast';
 
 
 const router = createBrowserRouter([
@@ -51,10 +51,7 @@ const router = createBrowserRouter([
         path: '/create-group',
         element: <CreateGroup />
       },
-      {
-        path: '/update-group',
-        element: <UpdateGroup />
-      },
+      
       {
         path: '/all-groups',
         element: <AllGroupPage />
@@ -67,6 +64,14 @@ const router = createBrowserRouter([
       {
         path: '/about-us',
         element: <AboutUs/>
+      },
+      {
+        path:"/update-group" ,
+        element: <UpdateGroup/>
+      },
+      {
+        path:"/update-group/:id" ,
+        element: <UpdateGroup/>
       },
       {
         path: '/group-details-page/:id',
@@ -91,6 +96,7 @@ createRoot(document.getElementById('root')).render(
     <HelmetProvider>
       <AuthProvider>
         <RouterProvider router={router}></RouterProvider>
+        <Toaster/>
       </AuthProvider>
     </HelmetProvider>
 

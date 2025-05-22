@@ -11,7 +11,7 @@ const PopularHobbies = () => {
   return (
     <div className='bg-base-100'>
       <section className="container mx-auto md:py-20 md:px-4 sm:px-6 lg:px-10 ">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10">Popular Hobbies</h2>
+      <h2 className="md:text-2xl sm:text-4xl font-bold text-orange-400 text-center mb-10">Popular Hobbies</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {hobbies.map(hobby => (
           <div

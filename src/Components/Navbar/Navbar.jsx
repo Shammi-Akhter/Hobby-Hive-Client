@@ -30,7 +30,7 @@ const Navbar = () => {
                         </NavLink>
                         {user && <NavLink to="/my-group-page" className="cursor-pointer text-blue-600 md:font-bold">My Group's Page</NavLink>}
                         {user && <NavLink to="/create-group" className="cursor-pointer text-amber-400 md:font-bold">Create Group</NavLink>}
-                        {user && <NavLink to="/update-group" className="cursor-pointer text-blue-600 md:font-bold">Update Group</NavLink>}
+                        
                     </ul>
                   
                 </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
                         </NavLink>
                         {user && <NavLink to="/my-group-page" onClick={() => setIsMenuOpen(false)} className="block">My Group's Page</NavLink>}
                         {user && <NavLink to="/create-group" onClick={() => setIsMenuOpen(false)} className="block">Create Group</NavLink>}
-                        {user && <NavLink to="/update-group" onClick={() => setIsMenuOpen(false)} className="block">Update Group</NavLink>}
+                        
                     </ul>
 
                     <div className="mt-4 flex flex-col gap-2 text-center">

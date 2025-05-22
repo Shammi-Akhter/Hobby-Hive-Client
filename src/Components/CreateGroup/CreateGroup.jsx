@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router';
 
 const hobbyCategories = [
     "Drawing & Painting",
@@ -9,10 +11,12 @@ const hobbyCategories = [
     "Running",
     "Cooking",
     "Reading",
-    "Writing"
+    "Writing",
+    "Others"
 ];
 
 const CreateGroup = () => {
+    const navigate = useNavigate();
     const { user } = useAuth();
     const [formData, setFormData] = useState({
         groupName: '',
@@ -45,7 +49,7 @@ const CreateGroup = () => {
         e.preventDefault();
 
         try {
-            console.log("Submitting to:", 'http://localhost:5000/create-group');
+           
 
             const res = await fetch('http://localhost:5000/create-group', {
                 method: 'POST',
@@ -57,7 +61,9 @@ const CreateGroup = () => {
             });
 
             if (res.ok) {
-                alert('Group created successfully!');
+               toast.success('Group Created successfully!');
+    
+      navigate('/my-group-page');
                 
                 setFormData({
                     groupName: '',
@@ -72,11 +78,11 @@ const CreateGroup = () => {
                 });
             } else {
                 const err = await res.json();
-                alert(`Failed: ${err.message}`);
+                toast.error(`Failed: ${err.message}`);
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('Server error. Check console.');
+            toast.error('Server error. Check console.');
         }
     };
 
@@ -150,9 +156,9 @@ const CreateGroup = () => {
 
                         <input
                             type="url"
-                            name="imageUrl"
+                            name="image"
                             placeholder="Image URL"
-                            value={formData.imageUrl}
+                            value={formData.image}
                             onChange={handleChange}
                             className="w-full border p-2 rounded"
                             required
@@ -176,7 +182,7 @@ const CreateGroup = () => {
 
                         <button
                             type="submit"
-                            className="w-full bg-cyan-600 hover:bg-purple-600 text-white font-semibold py-2 rounded-xl transition duration-200"
+                            className="w-full bg-cyan-600 hover:bg-purple-600 text-white cursor-pointer font-semibold py-2 rounded-xl transition duration-200"
                         >
                             Create
                         </button>

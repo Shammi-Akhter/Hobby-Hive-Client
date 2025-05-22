@@ -30,16 +30,16 @@ const AllGroupPage = () => {
    
      return (
       <div className="p-4 max-w-7xl mx-auto">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">All Hobby Groups</h1>
+      <h1 className="text-2xl sm:text-3xl text-gray-600 font-bold mb-6 text-center">All Hobby Groups</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {hobbies.map((hobby) => (
-          <div key={hobby._id} className="p-5 border rounded-2xl shadow hover:shadow-lg transition duration-300 bg-white">
-            <h2 className="text-xl font-semibold mb-2">{hobby.groupName}</h2>
+          <div key={hobby._id} className="p-5 border border-gray-200 rounded-2xl shadow hover:shadow-lg transition duration-300 bg-white">
+            <h2 className="text-xl text-amber-500 font-semibold mb-2">{hobby.groupName}</h2>
             <img className='md:w-full md:h-[200px]' src={hobby.image} alt="" />
             <p className="text-gray-600 mb-4 line-clamp-3">{hobby.description}</p>
             <Link
               to={`/group-details-page/${hobby._id}`}
-              className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+              className="inline-block px-4 py-2 bg-indigo-500 text-white rounded hover:bg-blue-700 transition"
             >
               See More
             </Link>
