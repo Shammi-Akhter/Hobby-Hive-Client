@@ -78,8 +78,8 @@ const Register = () => {
         <title>Register | HobbyHive</title>
       </Helmet>
       <Toaster position="top-right" />
-      <div className="flex justify-center items-center lg:min-h-screen lg:my-0 lg:mx-0 my-8 mx-4 bg-gradient-to-br from-pink-100 to-purple-200">
-        <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+      <div className="flex justify-center items-center lg:min-h-screen lg:my-0 lg:mx-0 my-8 mx-4 ">
+        <div className="w-full max-w-md border-2 border-white rounded-2xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-center text-purple-600 mb-6">Register</h2>
           <form onSubmit={handleRegister} className="space-y-4">
             <input
@@ -136,7 +136,7 @@ const Register = () => {
           <button
             onClick={handleGoogle}
             type="button"
-            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transition duration-200"
+            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-blue-400 transition duration-200"
           >
             <FcGoogle size={24} />
             <span>Sign up with Google</span>

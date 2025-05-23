@@ -26,7 +26,7 @@ const ImageSlider = () => {
     ];
 
     return (
-        <div className='bg-base-100 '>
+        <div className=''>
             <div className="w-full relative container mx-auto md:pt-10">
 
             <Slider {...settings}>

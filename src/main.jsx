@@ -23,7 +23,7 @@ import AboutUs from './Components/AboutUs/AboutUs.jsx';
 import GroupDetailsPage from './Components/GroupDetailsPage/GroupDetailsPage.jsx';
 import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
 import { Toaster } from 'react-hot-toast';
-
+import { ThemeProvider } from "./Theme.jsx";
 
 const router = createBrowserRouter([
   {
@@ -92,14 +92,14 @@ const router = createBrowserRouter([
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-
+<ThemeProvider>
     <HelmetProvider>
       <AuthProvider>
         <RouterProvider router={router}></RouterProvider>
         <Toaster/>
       </AuthProvider>
     </HelmetProvider>
-
+</ThemeProvider>
 
   </StrictMode>,
 )

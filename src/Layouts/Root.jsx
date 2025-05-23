@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
 import { Outlet, useLocation } from 'react-router';
 import Spinner from '../Components/Spinner/Spinner';
 import { Toaster } from 'react-hot-toast';
+import { ThemeContext } from '../Theme';
+import "../App.css"
 
 const Root = () => {
   const location = useLocation();
@@ -16,9 +18,9 @@ const Root = () => {
     }, 500); 
     return () => clearTimeout(timer);
   }, [location.pathname]);
-
+const { theme } = useContext(ThemeContext);
   return (
-  <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+   <div className={`App ${theme}`}>
     <Toaster/>
       <Navbar />
        {loading && (

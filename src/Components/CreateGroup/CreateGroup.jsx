@@ -51,7 +51,7 @@ const CreateGroup = () => {
         try {
            
 
-            const res = await fetch('http://localhost:5000/create-group', {
+            const res = await fetch('https://hobby-api-6fhj.onrender.com/create-group', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ const CreateGroup = () => {
                         >
                             <option value="">Select Hobby Category</option>
                             {hobbyCategories.map((cat) => (
-                                <option key={cat} value={cat}>{cat}</option>
+                                <option className='create-page-op' key={cat} value={cat}>{cat}</option>
                             ))}
                         </select>
 
@@ -169,7 +169,7 @@ const CreateGroup = () => {
                             name="userName"
                             value={formData.userName}
                             readOnly
-                            className="w-full border p-2 rounded bg-gray-100"
+                            className="w-full border p-2 rounded "
                         />
 
                         <input
@@ -177,7 +177,7 @@ const CreateGroup = () => {
                             name="userEmail"
                             value={formData.userEmail}
                             readOnly
-                            className="w-full border p-2 rounded bg-gray-100"
+                            className="w-full border p-2 rounded "
                         />
 
                         <button

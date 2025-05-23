@@ -39,8 +39,8 @@ const Login = () => {
       <Helmet>
         <title>Login | YourApp</title>
       </Helmet>
-      <div className="flex justify-center items-center lg:min-h-screen lg:my-0 lg:mx-0 my-8 mx-4 bg-gradient-to-br from-indigo-100 to-base-100">
-        <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+      <div className="flex justify-center items-center lg:min-h-screen lg:my-0 lg:mx-0 my-8 mx-4 ">
+        <div className="w-full max-w-md border-2 border-white rounded-2xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-center text-indigo-600 mb-6">Login</h2>
           <form onSubmit={handleEmailLogin} className="space-y-4">
             <input
@@ -49,7 +49,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 border border-gray-300    rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400"
             />
             <input
               type="password"
@@ -72,7 +72,7 @@ const Login = () => {
           <button
             onClick={handleGoogleLogin}
             type="button"
-            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transition duration-200"
+            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-blue-400 transition duration-200"
           >
             <FcGoogle size={24} />
             <span>Login with Google</span>

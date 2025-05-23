@@ -10,7 +10,7 @@ const GroupDetailsPage = () => {
   useEffect(() => {
     const fetchGroup = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/hobby-groups/${id}`);
+        const res = await fetch(`https://hobby-api-6fhj.onrender.com/hobby-groups/${id}`);
 
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -49,8 +49,9 @@ const GroupDetailsPage = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">{group.groupName}</h1>
+    <div className="max-w-4xl mx-auto p-4 ">
+     <div className='group-details-card'>
+       <h1 className="text-3xl font-bold mb-4">{group.groupName}</h1>
       <p className="text-gray-700 mb-2"><strong>Description:</strong> {group.description}</p>
       <p className="text-gray-700 mb-2"><strong>Category:</strong> {group.category}</p>
       <p className="text-gray-700 mb-2"><strong>Members:</strong> {group.maxMembers}</p>
@@ -63,6 +64,7 @@ const GroupDetailsPage = () => {
       >
         Join Group
       </button>
+     </div>
     </div>
   );
 };

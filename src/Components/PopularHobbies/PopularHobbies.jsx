@@ -9,14 +9,14 @@ const hobbies = [
 
 const PopularHobbies = () => {
   return (
-    <div className='bg-base-100'>
+    <div className='bg-base-100 popular-h'>
       <section className="container mx-auto md:py-20 md:px-4 sm:px-6 lg:px-10 ">
       <h2 className="md:text-2xl sm:text-4xl font-bold text-orange-400 text-center mb-10">Popular Hobbies</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {hobbies.map(hobby => (
           <div
             key={hobby.id}
-            className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition duration-300"
+            className="popular-h-card rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition duration-300"
           >
             <img
               src={hobby.image}

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
-        <div className=' bg-base-100' >
+        <div className=' footer border-t-2 border-white' >
             <footer className="footer container mx-auto sm:footer-horizontal text-base-content lg:px-20 lg:py-10">
                 <nav className='md:pt-10 md:pl-10'>
                 <img className='lg:w-[200px] sm:w-[100px]' src="https://i.postimg.cc/13DzgNM7/Logo-hobbyhive.png" alt="" />

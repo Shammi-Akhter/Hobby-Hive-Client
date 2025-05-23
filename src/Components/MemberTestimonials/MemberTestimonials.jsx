@@ -48,7 +48,7 @@ const testimonials = [
 
 const MemberTestimonials = () => {
   return (
-    <div className='bg-gradient-to-b from-blue-50 to-white '>
+    <div className=' '>
         <section className="container mx-auto py-14 px-4 sm:px-6 lg:px-10">
       <h2 className="md:text-2xl sm:text-4xl font-bold text-center mb-12 text-yellow-500">
         What Our Members Say
@@ -58,7 +58,7 @@ const MemberTestimonials = () => {
         {testimonials.map((t) => (
           <div
             key={t.id}
-            className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center text-center"
+            className="testimonial-card p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center text-center"
           >
             <FaQuoteLeft className="text-yellow-400 text-2xl mb-3" />
             <p className="text-gray-600 text-balance italic mb-4">"{t.quote}"</p>

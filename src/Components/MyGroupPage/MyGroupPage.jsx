@@ -10,7 +10,7 @@ const MyGroupPage = () => {
         console.log("User email:", user?.email);
         const fetchGroups = async () => {
             try {
-                const res = await fetch(`http://localhost:5000/my-groups?email=${user?.email}`);
+                const res = await fetch(`https://hobby-api-6fhj.onrender.com/my-groups?email=${user?.email}`);
                 const data = await res.json();
                 setMyGroups(data);
             } catch (err) {
@@ -26,7 +26,7 @@ const MyGroupPage = () => {
         if (!confirm) return;
 
         try {
-            const res = await fetch(`http://localhost:5000/groups/${id}`, {
+            const res = await fetch(`https://hobby-api-6fhj.onrender.com/groups/${id}`, {
                 method: 'DELETE',
             });
 
@@ -42,7 +42,7 @@ const MyGroupPage = () => {
     };
 
     return (
-        <div className=' bg-base-100'>
+        <div className=' '>
             <div className="container max-w-6xl mx-auto  p-6 md:h-[400px] md:pt-12">
                 <h1 className="text-2xl font-bold text-center mb-6 text-gray-600">My Groups</h1>
                 <div className="overflow-x-auto">
@@ -57,7 +57,7 @@ const MyGroupPage = () => {
                                 <th className="border p-2 border-gray-400 text-amber-500">Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="my-table">
                             {myGroups.map(group => (
                                 <tr key={group._id}>
                                     <td className="border p-2 border-gray-400">{group.groupName}</td>

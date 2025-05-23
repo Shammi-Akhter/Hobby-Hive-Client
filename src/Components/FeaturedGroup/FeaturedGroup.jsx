@@ -6,7 +6,7 @@ const FeaturedGroup = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/hobby-groups')
+    fetch('https://hobby-api-6fhj.onrender.com/hobby-groups')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch hobby groups');
@@ -36,13 +36,13 @@ const FeaturedGroup = () => {
   if (error) return <p className="text-center py-10 text-red-500">Error: {error}</p>;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 feature-g">
       <h1 className="text-3xl font-bold text-orange-500 mb-8 text-center">Featured Hobby Groups</h1>
       <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
         {hobbies.map((hobby) => (
           <div
             key={hobby._id}
-            className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col"
+            className="feature-g-card rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col"
           >
             <h2 className="text-xl font-semibold text-indigo-700 mb-3 text-center">{hobby.groupName}</h2>
             <img className='md:w-full md:h-[200px]' src={hobby.image} alt="" /> <br />

@@ -61,7 +61,7 @@ const UpdateGroup = () => {
     } else if (id) {
       (async () => {
         try {
-          const res = await fetch(`http://localhost:5000/groups/${id}`);
+          const res = await fetch(`https://hobby-api-6fhj.onrender.com/groups/${id}`);
           if (!res.ok) {
             toast.error('Group not found');
             return;
@@ -95,7 +95,7 @@ const UpdateGroup = () => {
   e.preventDefault();
 
   try {
-    const res = await fetch(`http://localhost:5000/groups/${id}`, {
+    const res = await fetch(`https://hobby-api-6fhj.onrender.com/groups/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -141,7 +141,7 @@ const UpdateGroup = () => {
           >
             <option value="">Select Hobby Category</option>
             {hobbyCategories.map(cat => (
-              <option key={cat} value={cat}>{cat}</option>
+              <option className='create-page-op' key={cat} value={cat}>{cat}</option>
             ))}
           </select>
 
@@ -179,7 +179,7 @@ const UpdateGroup = () => {
             name="startDate"
             value={formData.startDate}
             onChange={handleChange}
-            className="w-full border p-2 rounded"
+            className="w-full border bg-cyan-500 p-2 rounded"
             required
           />
 
@@ -197,7 +197,7 @@ const UpdateGroup = () => {
             name="userName"
             value={formData.userName}
             readOnly
-            className="w-full border p-2 rounded bg-gray-100 cursor-not-allowed"
+            className="w-full border p-2 rounded  cursor-not-allowed"
           />
 
           <input
@@ -205,7 +205,7 @@ const UpdateGroup = () => {
             name="userEmail"
             value={formData.userEmail}
             readOnly
-            className="w-full border p-2 rounded bg-gray-100 cursor-not-allowed"
+            className="w-full border p-2 rounded  cursor-not-allowed"
           />
 
           <button
