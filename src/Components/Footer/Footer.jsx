@@ -3,14 +3,14 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
-        <div className=' footer border-t-2 border-white' >
-            <footer className="footer container mx-auto sm:footer-horizontal text-base-content lg:px-20 lg:py-10">
+        <div className=' footer border-t-2 border-white md:pt-0 pt-5 md:pl-0 pl-4' >
+            <footer className="footer container mx-auto sm:footer-horizontal text-base-content lg:px-20 md:py-10 lg:py-10">
                 <nav className='md:pt-10 md:pl-10'>
-                <img className='lg:w-[200px] sm:w-[100px]' src="https://i.postimg.cc/13DzgNM7/Logo-hobbyhive.png" alt="" />
+                <img className='md:w-[200px] w-[150px] ' src="https://i.postimg.cc/13DzgNM7/Logo-hobbyhive.png" alt="" />
                 </nav>
 
                 <nav>
-                    <h6 className="footer-title text-blue-400 text-lg font-semibold">Get Inspired</h6>
+                    <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Get Inspired</h6>
                     <a href='https://www.hobbycraft.co.uk/ideas/' target='blank' className="link link-hover">Creative DIY Projects</a>
                     <a href='https://photographylife.com/photography-ideas' target='blank' className="link link-hover">Photography Ideas</a>
                     <a href='https://www.gardendesign.com/ideas/' target='blank' className="link link-hover">Home Gardening</a>
@@ -18,10 +18,10 @@ const Footer = () => {
 
                 </nav>
                 <nav>
-                    <h6 className="footer-title text-blue-400 text-lg font-semibold">Search to know</h6>
+                    <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Search to know</h6>
                     <NavLink to='/about-us'>About Us</NavLink>
                     <br />
-                    <h6 className="footer-title text-blue-400 text-lg font-semibold">Find Us</h6>
+                    <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Find Us</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a href="https://twitter.com/"
                             target="_blank"

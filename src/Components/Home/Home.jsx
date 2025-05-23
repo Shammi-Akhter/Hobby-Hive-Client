@@ -3,6 +3,7 @@ import ImageSlider from '../Slider/ImageSlider';
 import PopularHobbies from '../PopularHobbies/PopularHobbies';
 import MemberTestimonials from '../MemberTestimonials/MemberTestimonials';
 import FeaturesGroup from '../FeaturesGroup/FeaturesGroup';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -10,11 +11,13 @@ import FeaturesGroup from '../FeaturesGroup/FeaturesGroup';
 const Home = () => {
     return (
         <div >
-            
+            <Helmet>
+                <title>Home| HobbyHive</title>
+            </Helmet>
             <ImageSlider />
-            <PopularHobbies/>
-            <FeaturesGroup/>
-            <MemberTestimonials/> 
+            <PopularHobbies />
+            <FeaturesGroup />
+            <MemberTestimonials />
         </div>
     );
 };

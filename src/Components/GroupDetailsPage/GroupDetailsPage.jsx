@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const GroupDetailsPage = () => {
   const { id } = useParams();
@@ -36,7 +37,7 @@ const GroupDetailsPage = () => {
     if (groupStartDate < now) {
       toast.error("The group is no longer active.");
     } else {
-      alert(`You joined the group: ${group.groupName}`);
+      toast.success(`You joined the group: ${group.groupName}`);
     }
   };
 
@@ -49,23 +50,31 @@ const GroupDetailsPage = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-4 ">
-     <div className='group-details-card'>
-       <h1 className="text-3xl font-bold mb-4">{group.groupName}</h1>
-      <p className="text-gray-700 mb-2"><strong>Description:</strong> {group.description}</p>
-      <p className="text-gray-700 mb-2"><strong>Category:</strong> {group.category}</p>
-      <p className="text-gray-700 mb-2"><strong>Members:</strong> {group.maxMembers}</p>
-      <p className="text-gray-700 mb-2"><strong>Group Start Date</strong> {group.startDate}</p>
-      <p className="text-gray-700 mb-6"><strong>Location:</strong> {group.meetingLocation || "N/A"}</p>
+ <div>
+  <Helmet>
+        <title>Group Details| HobbyHive</title>
+      </Helmet>
+     <div className="max-w-4xl mx-auto p-4 ">
+      <div className='group-details-card md:p-10 rounded-2xl'>
+        <div className='flex justify-center items-center'>
+          <img className='md:w-[300px] md:h-[200px] md:m-5' src={group.image} alt="" />
+        </div>
+        <h1 className="md:text-2xl font-bold text-center md:p-1  mb-4 md:mt-0 mt-4  border rounded-3xl">{group.groupName}</h1>
+        <p className="text-gray-700 mb-2 "><strong>Description:</strong> {group.description}</p>
+        <p className="text-gray-700 mb-2"><strong>Category:</strong> {group.category}</p>
+        <p className="text-gray-700 mb-2"><strong>Members:</strong> {group.maxMembers}</p>
+        <p className="text-gray-700 mb-2"><strong>Group Start Date</strong> {group.startDate}</p>
+        <p className="text-gray-700 mb-6 "><strong>Location:</strong> {group.meetingLocation || "N/A"}</p>
 
-      <button
-        onClick={handleJoinGroup}
-        className="px-6 py-2 bg-cyan-500 text-white rounded hover:bg-amber-500 cursor-pointer transition"
-      >
-        Join Group
-      </button>
-     </div>
+        <button
+          onClick={handleJoinGroup}
+          className="px-6 py-2 bg-cyan-500 text-white hover:bg-amber-500 cursor-pointer transition w-full rounded-3xl "
+        >
+          Join Group
+        </button>
+      </div>
     </div>
+ </div>
   );
 };
 

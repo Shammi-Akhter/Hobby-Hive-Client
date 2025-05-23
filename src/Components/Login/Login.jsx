@@ -37,9 +37,9 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>Login | YourApp</title>
+        <title>Login | HobbyHive</title>
       </Helmet>
-      <div className="flex justify-center items-center lg:min-h-screen lg:my-0 lg:mx-0 my-8 mx-4 ">
+      <div className="flex justify-center items-center lg:min-h-screen md:h-[50vh] lg:my-0 lg:mx-0 my-8 mx-4 ">
         <div className="w-full max-w-md border-2 border-white rounded-2xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-center text-indigo-600 mb-6">Login</h2>
           <form onSubmit={handleEmailLogin} className="space-y-4">

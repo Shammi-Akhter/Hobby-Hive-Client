@@ -1,4 +1,5 @@
 import React from 'react';
+import { Bounce } from 'react-awesome-reveal';
 import { FaQuoteLeft } from 'react-icons/fa';
 
 const testimonials = [
@@ -50,9 +51,11 @@ const MemberTestimonials = () => {
   return (
     <div className=' '>
         <section className="container mx-auto py-14 px-4 sm:px-6 lg:px-10">
-      <h2 className="md:text-2xl sm:text-4xl font-bold text-center mb-12 text-yellow-500">
+      <Bounce>
+        <h2 className="md:text-2xl sm:text-4xl font-bold text-center mb-12 text-yellow-500">
         What Our Members Say
       </h2>
+      </Bounce>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {testimonials.map((t) => (

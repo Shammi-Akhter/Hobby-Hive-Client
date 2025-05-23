@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
 
 const AllGroupPage = () => {
@@ -25,11 +26,15 @@ const AllGroupPage = () => {
          });
      }, []);
    
-     if (loading) return <p>Loading hobbies...</p>;
-     if (error) return <p>Error: {error}</p>;
+     if (loading) return <p></p>;
+     if (error) return <p>{error}</p>;
    
      return (
-      <div className="p-4 max-w-7xl mx-auto">
+      <div>
+       <Helmet>
+        <title>AllGroupPage | HobbyHive</title>
+      </Helmet> 
+        <div className="p-4 max-w-7xl mx-auto">
       <h1 className="text-2xl sm:text-3xl text-gray-600 font-bold mb-6 text-center">All Hobby Groups</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {hobbies.map((hobby) => (
@@ -47,6 +52,7 @@ const AllGroupPage = () => {
         ))}
       </div>
     </div>
+      </div>
      );
 };
 

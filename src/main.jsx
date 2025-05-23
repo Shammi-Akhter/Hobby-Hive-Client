@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         path: '/create-group',
         element: <CreateGroup />
       },
-      
+
       {
         path: '/all-groups',
         element: <AllGroupPage />
@@ -65,26 +65,26 @@ const router = createBrowserRouter([
         path: '/featured-group',
         element: <FeaturesGroup />
       },
-      
+
       {
         path: '/about-us',
-        element: <AboutUs/>
+        element: <AboutUs />
       },
       {
-        path:"/update-group" ,
-        element: <UpdateGroup/>
+        path: "/update-group",
+        element: <UpdateGroup />
       },
       {
-        path:"/update-group/:id" ,
-        element: <UpdateGroup/>
+        path: "/update-group/:id",
+        element: <UpdateGroup />
       },
       {
         path: '/group-details-page/:id',
         element: (<PrivateRoute>
-        <GroupDetailsPage/>
+          <GroupDetailsPage />
         </PrivateRoute>)
       },
-    
+
     ],
     errorElement: <ErrorPage />
   },
@@ -97,14 +97,14 @@ const router = createBrowserRouter([
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-<ThemeProvider>
-    <HelmetProvider>
-      <AuthProvider>
-        <RouterProvider router={router}></RouterProvider>
-        <Toaster/>
-      </AuthProvider>
-    </HelmetProvider>
-</ThemeProvider>
+    <ThemeProvider>
+      <HelmetProvider>
+        <AuthProvider>
+          <RouterProvider router={router}></RouterProvider>
+          <Toaster />
+        </AuthProvider>
+      </HelmetProvider>
+    </ThemeProvider>
 
   </StrictMode>,
 )

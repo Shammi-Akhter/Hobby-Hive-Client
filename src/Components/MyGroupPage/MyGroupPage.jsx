@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link } from 'react-router';
 import { FiEdit } from 'react-icons/fi';
+import { Helmet } from 'react-helmet-async';
+import toast from 'react-hot-toast';
 const MyGroupPage = () => {
     const { user } = useAuth();
     const [myGroups, setMyGroups] = useState([]);
@@ -32,9 +34,9 @@ const MyGroupPage = () => {
 
             if (res.ok) {
                 setMyGroups((prev) => prev.filter((group) => group._id !== id));
-                alert('Deleted successfully');
+                toast.success('Deleted successfully');
             } else {
-                alert('Failed to delete');
+                toast.error('Failed to delete');
             }
         } catch (error) {
             console.error('Delete error:', error);
@@ -42,14 +44,18 @@ const MyGroupPage = () => {
     };
 
     return (
-        <div className=' '>
+        <div>
+            <Helmet>
+                    <title>My Group | HobbyHive</title>
+                  </Helmet>
+            <div className=' md:h-[65vh]'>
             <div className="container max-w-6xl mx-auto  p-6 md:h-[400px] md:pt-12">
-                <h1 className="text-2xl font-bold text-center mb-6 text-gray-600">My Groups</h1>
+                <h1 className="text-2xl font-bold text-center mb-6 text-gray-600">My Group</h1>
                 <div className="overflow-x-auto">
-                    <table className="min-w-full border border-gray-300 text-sm">
+                    <table className="md:min-w-full min-w-4xl border border-gray-300 text-sm">
                         <thead className="bg-gray-100">
                             <tr>
-                                <th className="border border-gray-400 p-2 text-blue-500">Group Name</th>
+                                <th className="border  border-gray-400 p-2 text-blue-500">Group Name</th>
                                 <th className="border p-2 border-gray-400 text-amber-500">Category</th>
                                 <th className="border  border-gray-400 p-2 text-blue-500">Location</th>
                                 <th className="border p-2 border-gray-400 text-amber-500">Start Date</th>
@@ -57,7 +63,7 @@ const MyGroupPage = () => {
                                 <th className="border p-2 border-gray-400 text-amber-500">Actions</th>
                             </tr>
                         </thead>
-                        <tbody className="my-table">
+                        <tbody className="my-table ">
                             {myGroups.map(group => (
                                 <tr key={group._id}>
                                     <td className="border p-2 border-gray-400">{group.groupName}</td>
@@ -91,6 +97,7 @@ const MyGroupPage = () => {
                     {myGroups.length === 0 && <p className="text-center mt-4 text-gray-500">No groups created yet.</p>}
                 </div>
             </div>
+        </div>
         </div>
     );
 };

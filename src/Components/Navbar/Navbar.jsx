@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom'; // fixed import
+import { Link, NavLink } from 'react-router-dom'; 
 import { AuthContext } from '../../context/AuthContext';
 import { ThemeContext } from '../../Theme';
 import { FiMoon, FiSun } from 'react-icons/fi';
@@ -9,33 +9,33 @@ const Navbar = () => {
   const { user, loading, logout } = useContext(AuthContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  const defaultAvatar = 'https://i.ibb.co/ZYW3VTp/brown-brim.png'; // fallback avatar
+  const defaultAvatar = 'https://i.ibb.co/ZYW3VTp/brown-brim.png'; 
 
   return (
     <div className="bg-white text-black nav border-b-2 border-white">
-      <div className="container mx-auto navbar lg:flex">
-        {/* Logo */}
+      <div className="container  mx-auto navbar lg:flex">
+      
         <div className="navbar-start">
           <Link to="/">
             <img
-              className="lg:w-[200px] sm:w-[100px]"
+              className="lg:w-[200px] w-[150px] "
               src="https://i.postimg.cc/13DzgNM7/Logo-hobbyhive.png"
               alt="Logo"
             />
           </Link>
         </div>
 
-        {/* Main Nav */}
+      
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex gap-5">
             <NavLink to="/" className="cursor-pointer text-blue-600 md:font-bold">Home</NavLink>
             <NavLink to="/all-groups" className="cursor-pointer text-amber-400 md:font-bold">All Groups</NavLink>
-            {user && <NavLink to="/my-group-page" className="cursor-pointer text-blue-600 md:font-bold">My Group's Page</NavLink>}
+            {user && <NavLink to="/my-group-page" className="cursor-pointer text-blue-600 md:font-bold">My Group</NavLink>}
             {user && <NavLink to="/create-group" className="cursor-pointer text-amber-400 md:font-bold">Create Group</NavLink>}
           </ul>
         </div>
 
-        {/* Auth + Theme */}
+      
         <div className="navbar-end hidden lg:flex gap-2 items-center">
           {loading ? (
             <span className="loading loading-spinner loading-sm"></span>
@@ -59,9 +59,11 @@ const Navbar = () => {
                   {user.displayName}
                 </span>
               </div>
-              <button onClick={logout} className="btn btn-sm bg-amber-500 text-white rounded-2xl">
-                Logout
+              <Link to="/">
+              <button onClick={logout} className="btn btn-sm bg-amber-500 text-white rounded-2xl">Logout
+               
               </button>
+               </Link>
             </>
           ) : (
             <>
@@ -70,7 +72,6 @@ const Navbar = () => {
             </>
           )}
 
-          {/* Theme toggle */}
           <div>
             <button
               onClick={toggleTheme}
@@ -82,7 +83,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile menu toggle */}
+        
         <div className="lg:hidden navbar-end">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -93,17 +94,16 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+     
       {isMenuOpen && (
         <div className="lg:hidden px-6 pb-4">
           <ul className="space-y-3 text-base-100 text-sm text-center">
             <NavLink to="/" onClick={() => setIsMenuOpen(false)} className="block">Home</NavLink>
-            <NavLink to="/featured-group" onClick={() => setIsMenuOpen(false)} className="block text-blue-400">Ongoing Groups</NavLink>
-            {user && <NavLink to="/my-group-page" onClick={() => setIsMenuOpen(false)} className="block">My Group's Page</NavLink>}
+            <NavLink to="/all-groups" onClick={() => setIsMenuOpen(false)} className="block text-blue-400">All Groups</NavLink>
+            {user && <NavLink to="/my-group-page" onClick={() => setIsMenuOpen(false)} className="block">My Group</NavLink>}
             {user && <NavLink to="/create-group" onClick={() => setIsMenuOpen(false)} className="block">Create Group</NavLink>}
           </ul>
 
-          {/* Auth buttons in mobile menu */}
           <div className="mt-4 flex flex-col gap-2 text-center">
             {loading ? (
               <span className="loading loading-spinner loading-sm mx-auto"></span>
@@ -127,9 +127,11 @@ const Navbar = () => {
                     {user.displayName}
                   </span>
                 </div>
-                <button onClick={logout} className="btn btn-sm bg-blue-400 text-white rounded-2xl">
-                  Logout
-                </button>
+                <Link to="/">
+              <button onClick={logout} className="btn btn-sm bg-amber-500 text-white rounded-2xl">Logout
+      
+              </button>
+               </Link>
               </div>
             ) : (
               <>
@@ -137,7 +139,17 @@ const Navbar = () => {
                 <Link to="/register" onClick={() => setIsMenuOpen(false)} className="btn bg-blue-400 text-white rounded-2xl">Register</Link>
               </>
             )}
+            <div>
+            <button
+              onClick={toggleTheme}
+              className="text-2xl text-gray-400 hover:text-yellow-500 cursor-pointer transition-colors"
+              aria-label="Toggle Theme"
+            >
+              {theme === "dark-theme" ? <FiSun /> : <FiMoon />}
+            </button>
           </div>
+          </div>
+
         </div>
       )}
     </div>

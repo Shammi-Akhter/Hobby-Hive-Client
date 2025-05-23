@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Bounce } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet-async';
 
 const FeaturesGroup = () => {
   const [hobbies, setHobbies] = useState([]);
@@ -36,23 +38,28 @@ const FeaturesGroup = () => {
   if (error) return <p className="text-center py-10 text-red-500">Error: {error}</p>;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 feature-g">
-      <h1 className="text-3xl font-bold text-orange-500 mb-8 text-center">Featured Hobby Groups</h1>
-      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-        {hobbies.map((hobby) => (
-          <div
-            key={hobby._id}
-            className="feature-g-card rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col"
-          >
-            <h2 className="text-xl font-semibold text-indigo-700 mb-3 text-center">{hobby.groupName}</h2>
-            <img className='md:w-full md:h-[200px]' src={hobby.image} alt="" /> <br />
-            <p className="text-gray-700 flex-grow">{hobby.description}</p>
-            <p className="mt-4 text-sm text-gray-500 italic">
-              Date: {new Date(hobby.startDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
-            </p>
-           
-          </div>
-        ))}
+    <div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 feature-g">
+     <Bounce>
+         <h1 className="text-2xl font-bold text-orange-500 mb-8 text-center">Featured Hobby Groups</h1>
+     </Bounce>
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
+          {hobbies.map((hobby) => (
+            <div
+              key={hobby._id}
+              className="feature-g-card rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col"
+            >
+              <h2 className="text-xl font-semibold text-indigo-700 mb-3 text-center">{hobby.groupName}</h2>
+              <img className='md:w-full md:h-[200px]' src={hobby.image} alt="" /> <br />
+              <p className="text-gray-700 flex-grow">{hobby.description}</p>
+              <p className="mt-4 text-sm text-gray-500 italic">
+                Date: {new Date(hobby.startDate).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+              </p>
+
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
