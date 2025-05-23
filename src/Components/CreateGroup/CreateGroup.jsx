@@ -51,7 +51,7 @@ const CreateGroup = () => {
         try {
            
 
-            const res = await fetch('https://hobby-api-6fhj.onrender.com/create-group', {
+            const res = await fetch('https://hobby-hive-server.vercel.app/create-group', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

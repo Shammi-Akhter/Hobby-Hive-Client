@@ -61,7 +61,7 @@ const UpdateGroup = () => {
     } else if (id) {
       (async () => {
         try {
-          const res = await fetch(`https://hobby-api-6fhj.onrender.com/groups/${id}`);
+          const res = await fetch(`https://hobby-hive-server.vercel.app/groups/${id}`);
           if (!res.ok) {
             toast.error('Group not found');
             return;
@@ -95,7 +95,7 @@ const UpdateGroup = () => {
   e.preventDefault();
 
   try {
-    const res = await fetch(`https://hobby-api-6fhj.onrender.com/groups/${id}`, {
+    const res = await fetch(`https://hobby-hive-server.vercel.app/groups/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

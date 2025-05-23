@@ -10,7 +10,7 @@ const GroupDetailsPage = () => {
   useEffect(() => {
     const fetchGroup = async () => {
       try {
-        const res = await fetch(`https://hobby-api-6fhj.onrender.com/hobby-groups/${id}`);
+        const res = await fetch(`https://hobby-hive-server.vercel.app/hobby-groups/${id}`);
 
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

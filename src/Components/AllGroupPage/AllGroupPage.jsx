@@ -7,7 +7,7 @@ const AllGroupPage = () => {
      const [error, setError] = useState(null);
    
      useEffect(() => {
-       fetch('https://hobby-api-6fhj.onrender.com/hobby-groups')
+       fetch('https://hobby-hive-server.vercel.app/hobby-groups')
          .then((res) => {
            if (!res.ok) {
              throw new Error('Failed to fetch hobby groups');

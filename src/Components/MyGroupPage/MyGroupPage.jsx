@@ -10,7 +10,7 @@ const MyGroupPage = () => {
         console.log("User email:", user?.email);
         const fetchGroups = async () => {
             try {
-                const res = await fetch(`https://hobby-api-6fhj.onrender.com/my-groups?email=${user?.email}`);
+                const res = await fetch(`https://hobby-hive-server.vercel.app/my-groups?email=${user?.email}`);
                 const data = await res.json();
                 setMyGroups(data);
             } catch (err) {
@@ -26,7 +26,7 @@ const MyGroupPage = () => {
         if (!confirm) return;
 
         try {
-            const res = await fetch(`https://hobby-api-6fhj.onrender.com/groups/${id}`, {
+            const res = await fetch(`https://hobby-hive-server.vercel.app/groups/${id}`, {
                 method: 'DELETE',
             });
 
