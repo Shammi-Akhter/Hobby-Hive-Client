@@ -24,7 +24,10 @@ import GroupDetailsPage from './Components/GroupDetailsPage/GroupDetailsPage.jsx
 
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from "./Theme.jsx";
-import FeaturedGroup from './Components/FeaturedGroup/FeaturedGroup.jsx';
+import FeaturesGroup from './Components/FeaturesGroup/FeaturesGroup.jsx';
+
+
+
 
 
 const router = createBrowserRouter([
@@ -60,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/featured-group',
-        element: <FeaturedGroup />
+        element: <FeaturesGroup />
       },
       
       {

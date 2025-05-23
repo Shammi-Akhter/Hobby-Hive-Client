@@ -2,8 +2,9 @@ import React from 'react';
 import ImageSlider from '../Slider/ImageSlider';
 import PopularHobbies from '../PopularHobbies/PopularHobbies';
 import MemberTestimonials from '../MemberTestimonials/MemberTestimonials';
+import FeaturesGroup from '../FeaturesGroup/FeaturesGroup';
 
-import FeaturedGroup from '../FeaturedGroup/Featuredgroup';
+
 
 
 const Home = () => {
@@ -12,8 +13,8 @@ const Home = () => {
             
             <ImageSlider />
             <PopularHobbies/>
-            <FeaturedGroup/>
-            <MemberTestimonials/>
+            <FeaturesGroup/>
+            <MemberTestimonials/> 
         </div>
     );
 };

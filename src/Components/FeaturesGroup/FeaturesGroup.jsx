@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const FeaturedGroup = () => {
+const FeaturesGroup = () => {
   const [hobbies, setHobbies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -58,4 +58,4 @@ const FeaturedGroup = () => {
   );
 };
 
-export default FeaturedGroup;
+export default FeaturesGroup;
