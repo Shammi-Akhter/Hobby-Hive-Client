@@ -20,7 +20,7 @@ const Footer = () => {
                 <nav>
                     <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Search to know</h6>
                     <NavLink to='/about-us'>About Us</NavLink>
-                    <br />
+                    <br /> 
                     <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Find Us</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a href="https://twitter.com/"
