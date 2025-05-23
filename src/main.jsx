@@ -24,7 +24,8 @@ import GroupDetailsPage from './Components/GroupDetailsPage/GroupDetailsPage.jsx
 
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from "./Theme.jsx";
-import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
+import FeaturedGroup from './Components/FeaturedGroup/FeaturedGroup.jsx';
+
 
 const router = createBrowserRouter([
   {
