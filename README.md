@@ -79,7 +79,7 @@ HobbyHub empowers users to:
 
 ### 🛠️ Backend Dev Dependencies
 
-| 📦 Package | 🔍 Purpose |
+| 📦 Package | 🔍 Purpose | 
 |-----------|------------|
 | 🚀 `vite` | Backend development server |
 | ⚛️ `react`, `react-dom` | Peer dependencies (optional rendering) |
