@@ -21,9 +21,10 @@ import { HelmetProvider } from 'react-helmet-async';
 import ErrorPage from './Components/ErrorPage/errorPage.jsx';
 import AboutUs from './Components/AboutUs/AboutUs.jsx';
 import GroupDetailsPage from './Components/GroupDetailsPage/GroupDetailsPage.jsx';
-import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
+
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from "./Theme.jsx";
+import FeaturedGroup from './Components/FeaturedGroup/Featuredgroup.jsx';
 
 const router = createBrowserRouter([
   {
