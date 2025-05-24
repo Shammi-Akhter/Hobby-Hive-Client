@@ -77,7 +77,7 @@ const Register = () => {
       <Helmet>
         <title>Register | HobbyHive</title>
       </Helmet>
-      <Toaster position="top-right" />
+      
       <div className="flex justify-center items-center lg:mt-20 lg:mb-28  md:mb-20 md:mt-10 lg:mx-0 my-8 mx-4 ">
         <div className="w-full max-w-md border-2 border-white rounded-2xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-center text-purple-600 mb-6">Register</h2>
