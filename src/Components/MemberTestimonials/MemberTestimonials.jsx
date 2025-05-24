@@ -12,7 +12,7 @@ const testimonials = [
   },
   {
     id: 2,
-    quote: "HobbyHub helped me meet amazing people who share my love for painting.",
+    quote: "HobbyHive helped me meet amazing people who share my love for painting.",
     name: "Tanvir",
     hobby: "Artist",
     image: "https://i.pravatar.cc/100?img=2"
@@ -40,7 +40,7 @@ const testimonials = [
   },
   {
     id: 6,
-    quote: "From coding to cooking — HobbyHub has been my happy place!",
+    quote: "From coding to cooking — HobbyHive has been my happy place!",
     name: "Junaid",
     hobby: "Multitalented",
     image: "https://i.postimg.cc/4d3wmX64/young-bearded-man-with-striped-shirt-273609-5677.avif"
