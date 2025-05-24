@@ -10,12 +10,19 @@ const ErrorPage = () => {
             <Helmet>
                 <title>Error Page | HobbyHive</title>
             </Helmet>
-            <div className='  bg-white text-center p-10 rounded-xl md:h-[450px]'>
-                <h1 className='text-9xl '>404</h1>
-                <h1 className='text-40px font-semibold p-2 '>No Group Found!!!!!</h1>
-                <p className='text-sm text-gray-400 p-2'>Please select "Home" to see ongoing groups!!!!!!!</p>
-
-            </div>
+            <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center p-4">
+      <h1 className="text-6xl font-bold text-red-500 mb-4">404</h1>
+      <h2 className="text-2xl font-semibold mb-2">No Group Found</h2>
+      <p className="text-gray-600 mb-6">
+        Please select <span className="font-semibold">"Home"</span> to see ongoing groups.
+      </p>
+      <Link to="/">
+        {/* You can use your own button styling or a component */}
+        <button className="bg-gray-300 cursor-pointer hover:bg-gray-400 text-white px-6 py-2 rounded-xl shadow">
+          Go to Home
+        </button>
+      </Link>
+    </div>
 
         </div>
     );
