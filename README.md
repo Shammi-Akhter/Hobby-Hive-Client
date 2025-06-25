@@ -91,23 +91,30 @@ HobbyHub empowers users to:
 
 ## 🛠️ How to Run Locally
 
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/your-username/hobbyhive.git
+Follow these steps to run the project on your local machine:
 
-2. Navigate to the client folder and install dependencies
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/hobbyhive.git
+
+
+### 2️⃣ Set Up the Client
 
 cd client
 npm install
 npm run dev
+This will install the frontend dependencies and start the client on http://localhost:5173 (default Vite port).
 
-3. Navigate to the server folder and install dependencies
-
+###3️⃣ Set Up the Server
+Open a new terminal tab or window, then run:
 cd server
 npm install
 npm run start
+This will install the backend dependencies and start the server on http://localhost:5000 or your configured port.
 
-4. Add .env files for both client and server as needed (with Firebase config, MongoDB URI, etc.)
+###4️⃣ Configure Environment Variables
+Add .env files for both client and server as needed (with Firebase config, MongoDB URI, etc.)
 
 
 
