@@ -94,27 +94,20 @@ HobbyHub empowers users to:
 1. Clone the repo  
    ```bash
    git clone https://github.com/your-username/hobbyhive.git
-   
+
 2. Navigate to the client folder and install dependencies
 
-bash
-Copy
-Edit
 cd client
 npm install
 npm run dev
 
 3. Navigate to the server folder and install dependencies
 
-bash
-Copy
-Edit
 cd server
 npm install
 npm run start
 
 4. Add .env files for both client and server as needed (with Firebase config, MongoDB URI, etc.)
 
-Copy
-Edit
+
 
