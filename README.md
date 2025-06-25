@@ -95,11 +95,11 @@ Follow these steps to run the project on your local machine:
 
 ### 1️⃣ Clone the Repository
 
-
+```bash
 git clone https://github.com/your-username/hobbyhive.git
 
-2️⃣ Set Up the Client
-
+### 2️⃣ Set Up the Client
+```bash
 cd client
 npm install
 npm run dev
@@ -107,6 +107,7 @@ This will install the frontend dependencies and start the client on http://local
 
 ### 3️⃣ Set Up the Server
 Open a new terminal tab or window, then run:
+```bash
 cd server
 npm install
 npm run start
