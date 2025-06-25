@@ -4,7 +4,8 @@
 
 🔗 **Live Site**: [HobbyHive on Firebase](https://hobby-hive-55664.web.app)  
 
-
+https://hobby-hive-server.vercel.app/
+https://github.com/Shammi-Akhter/Hobby-Hive-Server
 ---
 
 ## 📖 Project Description
