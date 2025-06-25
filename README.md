@@ -95,22 +95,25 @@ Follow these steps to run the project on your local machine:
 
 ### 1️⃣ Clone the Repository
 
-
+```bash
 git clone https://github.com/your-username/hobbyhive.git
-
+```
 ### 2️⃣ Set Up the Client
-
+```bash
 cd client
 npm install
 npm run dev
+```
 This will install the frontend dependencies and start the client on http://localhost:5173 (default Vite port).
 
 ### 3️⃣ Set Up the Server
 Open a new terminal tab or window, then run:
 
+```bash
 cd server
 npm install
 npm run start
+```
 This will install the backend dependencies and start the server on http://localhost:5000 or your configured port.
 
 ### 4️⃣ Configure Environment Variables
@@ -123,10 +126,10 @@ Add .env files for both client and server as needed (with Firebase config, Mongo
 ## 📸 Application Screenshots
 
 <p align="center">
-  <img src="https://i.postimg.cc/VkhbxWwK/hobby-Hive-1.png" width="45%">
-  <img src="https://i.postimg.cc/MGyK97pM/hobby-Hive-3.png" width="45%">
+  <img src="https://i.postimg.cc/VkhbxWwK/hobby-Hive-1.png" width="65%">
+  <img src="https://i.postimg.cc/MGyK97pM/hobby-Hive-3.png" width="65%">
   <img src="https://i.postimg.cc/63pJCn2N/Hobby-Hive-2.png.png" width="45%">
-  <img src="https://i.postimg.cc/Rq5pw1dv/hobby-Hive-4.png.png.png" width="45%">
+  <img src="https://i.postimg.cc/Rq5pw1dv/hobby-Hive-4.png.png.png" width="100%">
 </p>
 
 ---
