@@ -3,9 +3,9 @@
 **HobbyHive** is a vibrant platform where people can discover, join, or create hobby-based communities like book clubs, hiking groups, painting circles, and more! It fosters meaningful social engagement through shared interests and helps users connect and collaborate based on their passions.
 
 🔗 **Live Site**: [HobbyHive on Firebase](https://hobby-hive-55664.web.app)  
+🔗 **Backend Server**: [HobbyHive Server on Vercel](https://hobby-hive-server.vercel.app/)  
+🔗 **Backend GitHub Repo**: [HobbyHive Server GitHub](https://github.com/Shammi-Akhter/Hobby-Hive-Server)
 
-https://hobby-hive-server.vercel.app/
-https://github.com/Shammi-Akhter/Hobby-Hive-Server
 ---
 
 ## 📖 Project Description
