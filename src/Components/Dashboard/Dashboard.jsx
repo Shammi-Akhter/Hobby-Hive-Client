@@ -14,9 +14,9 @@ const Dashboard = () => {
   const location = useLocation();
   return (
     <div className=" flex flex-col bg-gray-100 overflow-visible">
-      <Navbar />
-      <div className="flex flex-1 mt-16">
-        <aside className="fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 bg-white shadow-lg p-6 z-30">
+      
+      <div className="flex flex-1 ">
+        <aside className="fixed top-0 left-0 h-[100vh] w-64 bg-white shadow-lg p-6 z-30">
           <h2 className="text-xl font-bold mb-6">Dashboard</h2>
           <nav className="flex flex-col gap-2">
             {navLinks.map((link) => (

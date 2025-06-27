@@ -48,10 +48,10 @@ const MyGroupPage = () => {
             <Helmet>
                     <title>My Group | HobbyHive</title>
                   </Helmet>
-            <div className=' md:h-[65vh]'>
-            <div className="container max-w-6xl mx-auto  p-6 md:h-[400px] md:pt-12">
+            <div className=' md:h-[100vh]'>
+            <div className="container bg-white max-w-6xl mx-auto  p-6 md:h-[400px] md:pt-12">
                 <h1 className="text-2xl font-bold text-center mb-6 text-gray-600">My Group</h1>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto ">
                     <table className="md:min-w-full min-w-4xl border border-gray-300 text-sm">
                         <thead className="bg-gray-100">
                             <tr>
