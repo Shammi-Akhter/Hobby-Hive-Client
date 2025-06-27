@@ -2,7 +2,7 @@ import React from 'react';
 
 const Support = () => {
     return (
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:mt-10 text-gray-800 dark:text-gray-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10  text-gray-800 dark:text-gray-200">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-center">
                 Need Help? We're Here for You!
             </h1>
@@ -13,16 +13,17 @@ const Support = () => {
             </p>
 
             <div className="mb-8">
-                <ul className="list-disc list-inside space-y-3 text-sm sm:text-base">
-                    <li>💬 Questions about joining or creating a hobby group?</li>
-                    <li>🧭 Trouble discovering communities that match your interests?</li>
-                    <li>🎨 Want to suggest a new hobby category?</li>
-                    <li>🔐 Issues with your account or profile?</li>
+                <ul className="list-disc list-inside space-y-3 text-sm sm:text-base md:pl-2">
+                    
+                    <p > 💬 Questions about joining or creating a hobby group?</p>
+                    <p > 🧭Trouble discovering communities that match your interests?</p>
+                    <p > 🎨 Want to suggest a new hobby category?</p>
+                    <p > 🔐 Issues with your account or profile?</p>
                 </ul>
             </div>
 
-            <div className="bg-gray-100 dark:bg-gray-800 p-5 sm:p-6 rounded-xl shadow-md text-sm sm:text-base">
-                <p className="font-semibold mb-1">📧 Email Support:</p>
+            <div className=" dark:bg-gray-800 p-5 sm:p-6 rounded-xl border border-amber-500 shadow-md text-sm sm:text-base">
+                <p className="font-semibold mb-1 ">📧 Email Support:</p>
                 <p>support@hobbyhive.com</p>
             </div>
         </div>

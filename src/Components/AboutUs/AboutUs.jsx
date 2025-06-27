@@ -9,7 +9,7 @@ const AboutUs = () => {
       <Helmet>
         <title>About Us| HobbyHive</title>
       </Helmet>
-      <div className="px-4 py-12 sm:py-16 md:py-20 lg:py-24 ">
+      <div className="px-4 py-12 sm:py-16 md:py-20 lg:py-10 ">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Discover&nbsp;

@@ -79,8 +79,8 @@ const AllGroupPage = () => {
             onChange={(e) => setSortOrder(e.target.value)}
             className="px-5 py-2 border rounded-md"
           >
-            <option value="asc">Sort A-Z</option>
-            <option value="desc">Sort Z-A</option>
+            <option className='text-black' value="asc">Sort A-Z</option>
+            <option className='text-black' value="desc">Sort Z-A</option>
           </select>
         </div>
 
