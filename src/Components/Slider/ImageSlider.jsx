@@ -38,7 +38,7 @@ const ImageSlider = () => {
                 </Slider>
 
 
-                <div className="absolute w-full top-100 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-10 text-center">
+                {/* <div className="absolute w-full top-100 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-10 text-center">
                     <h1
                         className="text-2xl md:text-5xl font-bold"
                         style={{ textShadow: '4px 4px 20px rgba(255, 255, 0, 0.9)' }}
@@ -51,7 +51,7 @@ const ImageSlider = () => {
                     >
                         “From art and music to tech and outdoor adventures, discover events and experiences that fuel your creativity and bring your hobbies to life. Dive into a world where every passion finds its community.”
                     </p>
-                </div>
+                </div> */}
 
             </div>
         </div>
