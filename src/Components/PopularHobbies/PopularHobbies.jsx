@@ -11,7 +11,7 @@ const hobbies = [
 const PopularHobbies = () => {
   return (
     <div className='bg-base-100 popular-h'>
-      <section className="container md:mx-auto  md:py-20 py-10  md:px-4  px-4 lg:px-10 ">
+      <section className="container md:mx-auto  md:py-10 py-10  md:px-4  px-4 lg:px-10 ">
         <Bounce><h2 className="md:text-2xl sm:text-4xl font-bold text-orange-400 text-center mb-10">Popular Hobbies</h2></Bounce>
 
 

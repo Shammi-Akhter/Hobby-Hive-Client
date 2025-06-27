@@ -68,7 +68,7 @@ const GroupDetailsPage = () => {
 
         <button
           onClick={handleJoinGroup}
-          className="px-6 py-2 bg-cyan-500 text-white hover:bg-amber-500 cursor-pointer transition w-full rounded-3xl "
+          className="px-6 py-2 bg-amber-500 text-white hover:bg-amber-400 cursor-pointer transition w-full rounded-3xl "
         >
           Join Group
         </button>

@@ -43,28 +43,42 @@ const testimonials = [
     quote: "From coding to cooking — HobbyHive has been my happy place!",
     name: "Junaid",
     hobby: "Multitalented",
-    image: "https://i.postimg.cc/4d3wmX64/young-bearded-man-with-striped-shirt-273609-5677.avif"
+    image: "https://i.pravatar.cc/100?img=8"
   },
+  {
+  id: 7,
+  quote: "Joining the gardening group brought so much peace to my weekends.",
+  name: "Ginilia",
+  hobby: "Gardener",
+  image: "https://i.pravatar.cc/100?img=16"
+},
+{
+  id: 8,
+  quote: "HobbyHive introduced me to local musicians — we even formed a band!",
+  name: "Crischin",
+  hobby: "Musician",
+  image: "https://i.pravatar.cc/100?img=13"
+}
 ];
 
 const MemberTestimonials = () => {
   return (
     <div className=' '>
-        <section className="container mx-auto py-14 px-4 sm:px-6 lg:px-10">
+        <section className="container mx-auto py-10 px-4 sm:px-6 lg:px-10">
       <Bounce>
         <h2 className="md:text-2xl sm:text-4xl font-bold text-center mb-12 text-yellow-500">
         What Our Members Say
       </h2>
       </Bounce>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-10">
         {testimonials.map((t) => (
           <div
             key={t.id}
-            className="testimonial-card p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center text-center"
+            className="testimonial-card lg:h-[220px] p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center text-center"
           >
             <FaQuoteLeft className="text-yellow-400 text-2xl mb-3" />
-            <p className="text-gray-600 text-balance italic mb-4">"{t.quote}"</p>
+            <p className="text-gray-600 text-[12px] italic mb-4">"{t.quote}"</p>
             <img
               src={t.image}
               alt={t.name}

@@ -39,11 +39,10 @@ const FeaturesGroup = () => {
 
   return (
     <div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 feature-g">
-     <Bounce>
-         <h1 className="text-2xl font-bold text-orange-500 mb-8 text-center">Featured Hobby Groups</h1>
-     </Bounce>
+        <Bounce>
+          <h1 className="text-2xl font-bold text-orange-500 mb-8 text-center">Featured Hobby Groups</h1>
+        </Bounce>
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
           {hobbies.map((hobby) => (
             <div

@@ -4,6 +4,7 @@ import PopularHobbies from '../PopularHobbies/PopularHobbies';
 import MemberTestimonials from '../MemberTestimonials/MemberTestimonials';
 import FeaturesGroup from '../FeaturesGroup/FeaturesGroup';
 import { Helmet } from 'react-helmet-async';
+import NewsletterSection from '../NewsletterSection/NewsletterSection';
 
 
 
@@ -18,6 +19,7 @@ const Home = () => {
             <PopularHobbies />
             <FeaturesGroup />
             <MemberTestimonials />
+            <NewsletterSection/>
         </div>
     );
 };

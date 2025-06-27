@@ -12,14 +12,14 @@ const Navbar = () => {
   const defaultAvatar = 'https://i.ibb.co/ZYW3VTp/brown-brim.png'; 
 
   return (
-    <div className="bg-white text-black nav border-b-2 border-white">
+    <div className="sticky top-0 left-0 w-full z-50 bg-white text-black nav border-b-2 border-white">
       <div className="container  mx-auto navbar lg:flex">
       
         <div className="navbar-start">
           <Link to="/">
             <img
               className="lg:w-[200px] w-[150px] "
-              src="https://i.postimg.cc/13DzgNM7/Logo-hobbyhive.png"
+              src="https://i.postimg.cc/sXbSyps7/Logo-hobbyhive-removebg-preview.png"
               alt="Logo"
             />
           </Link>
@@ -30,8 +30,8 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 flex gap-5">
             <NavLink to="/" className="cursor-pointer text-blue-600 md:font-bold">Home</NavLink>
             <NavLink to="/all-groups" className="cursor-pointer text-amber-400 md:font-bold">All Groups</NavLink>
-            {user && <NavLink to="/my-group-page" className="cursor-pointer text-blue-600 md:font-bold">My Group</NavLink>}
-            {user && <NavLink to="/create-group" className="cursor-pointer text-amber-400 md:font-bold">Create Group</NavLink>}
+            {user && <NavLink to="/dashboard" className="cursor-pointer text-indigo-600 md:font-bold">Dashboard</NavLink>}
+            <NavLink to="/support" className="cursor-pointer text-amber-400 md:font-bold">Support</NavLink>
           </ul>
         </div>
 
@@ -67,8 +67,8 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/login" className="btn rounded-2xl bg-blue-400 text-white">Log In</Link>
-              <Link to="/register" className="btn rounded-2xl bg-blue-400 text-white">Register</Link>
+              <Link to="/login" className="btn rounded-2xl bg-amber-500 text-white">Log In</Link>
+              <Link to="/register" className="btn rounded-2xl bg-amber-500 text-white">Register</Link>
             </>
           )}
 
@@ -102,6 +102,7 @@ const Navbar = () => {
             <NavLink to="/all-groups" onClick={() => setIsMenuOpen(false)} className="block text-blue-400">All Groups</NavLink>
             {user && <NavLink to="/my-group-page" onClick={() => setIsMenuOpen(false)} className="block">My Group</NavLink>}
             {user && <NavLink to="/create-group" onClick={() => setIsMenuOpen(false)} className="block">Create Group</NavLink>}
+            {user && <NavLink to="/dashboard" onClick={() => setIsMenuOpen(false)} className="block text-indigo-600">Dashboard</NavLink>}
           </ul>
 
           <div className="mt-4 flex flex-col gap-2 text-center">
@@ -135,8 +136,8 @@ const Navbar = () => {
               </div>
             ) : (
               <>
-                <Link to="/login" onClick={() => setIsMenuOpen(false)} className="btn bg-blue-400 text-white rounded-2xl">Log In</Link>
-                <Link to="/register" onClick={() => setIsMenuOpen(false)} className="btn bg-blue-400 text-white rounded-2xl">Register</Link>
+                <Link to="/login" onClick={() => setIsMenuOpen(false)} className="btn bg-amber-600 text-white rounded-2xl">Log In</Link>
+                <Link to="/register" onClick={() => setIsMenuOpen(false)} className="btn bg-amber-600 text-white rounded-2xl">Register</Link>
               </>
             )}
             <div>

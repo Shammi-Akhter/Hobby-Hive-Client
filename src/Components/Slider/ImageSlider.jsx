@@ -29,31 +29,31 @@ const ImageSlider = () => {
         <div className=''>
             <div className="w-full relative container mx-auto md:pt-10">
 
-            <Slider {...settings}>
-                {images.map((url, idx) => (
-                    <div key={idx}>
-                        <img src={url} alt={`Slide ${idx}`} className="w-full h-[800px] object-cover" />
-                    </div>
-                ))}
-            </Slider>
+                <Slider {...settings}>
+                    {images.map((url, idx) => (
+                        <div key={idx}>
+                            <img src={url} alt={`Slide ${idx}`} className="w-full h-[500px] object-cover" />
+                        </div>
+                    ))}
+                </Slider>
 
 
-            <div className="absolute w-full top-100 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-10 text-center">
-                <h1
-                    className="text-2xl md:text-5xl font-bold"
-                    style={{ textShadow: '4px 4px 20px rgba(255, 255, 0, 0.9)' }}
-                >
-                   “Explore Your Passion - One Hobby at a Time”
-                </h1>
-                <p
-                    className="text-sm md:text-xl font-bold md:p-5"
-                    style={{ textShadow: '3px 3px 15px rgba(255, 255, 0, 0.8)' }}
-                >
-                   “From art and music to tech and outdoor adventures, discover events and experiences that fuel your creativity and bring your hobbies to life. Dive into a world where every passion finds its community.”
-                </p>
+                <div className="absolute w-full top-100 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-10 text-center">
+                    <h1
+                        className="text-2xl md:text-5xl font-bold"
+                        style={{ textShadow: '4px 4px 20px rgba(255, 255, 0, 0.9)' }}
+                    >
+                        “Explore Your Passion - One Hobby at a Time”
+                    </h1>
+                    <p
+                        className="text-sm md:text-xl font-bold md:p-5"
+                        style={{ textShadow: '3px 3px 15px rgba(255, 255, 0, 0.8)' }}
+                    >
+                        “From art and music to tech and outdoor adventures, discover events and experiences that fuel your creativity and bring your hobbies to life. Dive into a world where every passion finds its community.”
+                    </p>
+                </div>
+
             </div>
-
-        </div>
         </div>
     );
 };

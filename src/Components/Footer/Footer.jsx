@@ -5,8 +5,9 @@ const Footer = () => {
     return (
         <div className=' footer border-t-2 border-white md:pt-0 pt-5 md:pl-0 pl-4' >
             <footer className="footer container mx-auto sm:footer-horizontal text-base-content lg:px-20 md:py-10 lg:py-10">
-                <nav className='md:pt-10 md:pl-10'>
-                <img className='md:w-[200px] w-[150px] ' src="https://i.postimg.cc/13DzgNM7/Logo-hobbyhive.png" alt="" />
+                <nav className=' md:pl-10'>
+                <img className='md:w-[200px] w-[150px] ' src="https://i.postimg.cc/sXbSyps7/Logo-hobbyhive-removebg-preview.png" alt="" />
+                <h1 className='md:w-[200px] w-[150px] md:pl-2'><span className='font-bold'>HobbyHive</span> – Discover and join hobby-based communities like book clubs, hiking groups, and painting circles!</h1>
                 </nav>
 
                 <nav>
@@ -20,7 +21,8 @@ const Footer = () => {
                 <nav>
                     <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Search to know</h6>
                     <NavLink to='/about-us'>About Us</NavLink>
-                    <br /> 
+                    <NavLink to='/support'>Support</NavLink>
+                    
                     <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Find Us</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a href="https://twitter.com/"

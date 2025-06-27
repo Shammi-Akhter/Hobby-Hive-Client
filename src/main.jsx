@@ -25,6 +25,12 @@ import GroupDetailsPage from './Components/GroupDetailsPage/GroupDetailsPage.jsx
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from "./Theme.jsx";
 import FeaturesGroup from './Components/FeaturesGroup/FeaturesGroup.jsx';
+import Support from './Components/Support/Support.jsx';
+import Dashboard from './Components/Dashboard/Dashboard.jsx';
+import Overview from './Components/Dashboard/Overview.jsx';
+import AllItems from './Components/Dashboard/AllItems.jsx';
+import AddItem from './Components/Dashboard/AddItem.jsx';
+import MyItems from './Components/Dashboard/MyItems.jsx';
 
 
 
@@ -79,6 +85,10 @@ const router = createBrowserRouter([
         element: <UpdateGroup />
       },
       {
+        path: "/support",
+        element: <Support/>
+      },
+      {
         path: '/group-details-page/:id',
         element: (<PrivateRoute>
           <GroupDetailsPage />
@@ -88,12 +98,24 @@ const router = createBrowserRouter([
     ],
     errorElement: <ErrorPage />
   },
-
+  {
+    path: '/dashboard',
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
+    children: [
+      { index: true, element: <Overview /> },
+      { path: 'all-items', element: <AllItems /> },
+      { path: 'add-item', element: <AddItem /> },
+      { path: 'my-items', element: <MyItems /> },
+    ],
+  },
   {
     path: '*',
     element: <ErrorPage />
   }
-
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
