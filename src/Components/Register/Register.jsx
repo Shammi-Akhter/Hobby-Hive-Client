@@ -127,7 +127,7 @@ const Register = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 rounded-xl transition duration-200"
+              className="w-full bg-amber-500 hover:bg-amber-400 cursor-pointer text-white font-semibold py-2 rounded-xl transition duration-200"
             >
               Register
             </button>
@@ -136,7 +136,7 @@ const Register = () => {
           <button
             onClick={handleGoogle}
             type="button"
-            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-blue-400 transition duration-200"
+            className="w-full flex items-center cursor-pointer justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-amber-400  transition duration-200"
           >
             <FcGoogle size={24} />
             <span>Sign up with Google</span>

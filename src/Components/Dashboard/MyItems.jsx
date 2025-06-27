@@ -55,11 +55,11 @@ const MyGroupPage = () => {
                     <table className="md:min-w-full min-w-4xl border border-gray-300 text-sm">
                         <thead className="bg-gray-100">
                             <tr>
-                                <th className="border  border-gray-400 p-2 text-blue-500">Group Name</th>
+                                <th className="border  border-gray-400 p-2 text-amber-500">Group Name</th>
                                 <th className="border p-2 border-gray-400 text-amber-500">Category</th>
-                                <th className="border  border-gray-400 p-2 text-blue-500">Location</th>
+                                <th className="border  border-gray-400 p-2 text-amber-500">Location</th>
                                 <th className="border p-2 border-gray-400 text-amber-500">Start Date</th>
-                                <th className="border  border-gray-400 p-2 text-blue-500">Max Members</th>
+                                <th className="border  border-gray-400 p-2 text-amber-500">Max Members</th>
                                 <th className="border p-2 border-gray-400 text-amber-500">Actions</th>
                             </tr>
                         </thead>

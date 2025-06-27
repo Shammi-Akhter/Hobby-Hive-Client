@@ -24,7 +24,7 @@ const AllItems = () => {
   }, []);
 
   return (
-    <div className="p-6">
+    <div className="p-6 bg-white">
       <h2 className="text-2xl font-bold mb-4">All Groups</h2>
       {loading ? (
         <div className="flex justify-center items-center h-32">
@@ -33,8 +33,8 @@ const AllItems = () => {
       ) : error ? (
         <div className="text-red-500 text-center">{error}</div>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-white rounded-lg shadow">
+        <div className="overflow-x-auto ">
+          <table className="min-w-full bg-gray-50 rounded-lg shadow">
             <thead>
               <tr>
                 <th className="py-2 px-4 border-b">Name</th>
@@ -48,10 +48,10 @@ const AllItems = () => {
               {items.map((item) => (
                 <tr key={item._id}>
                   <td className="py-2 px-4 border-b">{item.groupName}</td>
-                  <td className="py-2 px-4 border-b">{item.category}</td>
-                  <td className="py-2 px-4 border-b">{item.location}</td>
-                  <td className="py-2 px-4 border-b">{item.startDate}</td>
-                  <td className="py-2 px-4 border-b">{item.maxMembers}</td>
+                  <td className="py-2 px-4 border-b text-center">{item.category}</td>
+                  <td className="py-2 px-4 border-b text-center">{item.location}</td>
+                  <td className="py-2 px-4 border-b text-center">{item.startDate}</td>
+                  <td className="py-2 px-4 border-b text-center">{item.maxMembers}</td>
                 </tr>
               ))}
             </tbody>

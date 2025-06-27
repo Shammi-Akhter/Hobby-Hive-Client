@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import { FaHome } from 'react-icons/fa';
 
 const navLinks = [
   { to: '', label: 'Overview' },
@@ -30,7 +29,7 @@ const Dashboard = () => {
               </Link>
             ))}
           </nav>
-            <NavLink to="/" ><button className="cursor-pointer text-blue-600 md:font-bold lg:p-4 " >Home</button></NavLink>
+            <NavLink to="/" ><button className="flex items-center gap-1 cursor-pointer text-blue-600 md:font-bold lg:p-4 " ><FaHome/>Home </button></NavLink>
         </aside>
         <main className="flex-1 p-8 ml-64  relative z-30 overflow-visible">
           <Outlet />

@@ -61,7 +61,7 @@ const Login = () => {
             />
             <button
               type="submit"
-              className="w-full bg-amber-500 hover:bg-blue-400 text-white font-semibold py-2 rounded-xl transition duration-200"
+              className="w-full bg-amber-500 hover:bg-amber-400 cursor-pointer text-white font-semibold py-2 rounded-xl transition duration-200"
             >
               Login
             </button>
@@ -72,7 +72,7 @@ const Login = () => {
           <button
             onClick={handleGoogleLogin}
             type="button"
-            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl hover:bg-blue-400 transition duration-200"
+            className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-xl cursor-pointer hover:bg-amber-400 transition duration-200"
           >
             <FcGoogle size={24} />
             <span>Login with Google</span>

@@ -11,7 +11,7 @@ const Footer = () => {
                 </nav>
 
                 <nav>
-                    <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Get Inspired</h6>
+                    <h6 className="footer-title text-amber-500 md:text-lg font-semibold">Get Inspired</h6>
                     <a href='https://www.hobbycraft.co.uk/ideas/' target='blank' className="link link-hover">Creative DIY Projects</a>
                     <a href='https://photographylife.com/photography-ideas' target='blank' className="link link-hover">Photography Ideas</a>
                     <a href='https://www.gardendesign.com/ideas/' target='blank' className="link link-hover">Home Gardening</a>
@@ -19,11 +19,11 @@ const Footer = () => {
 
                 </nav>
                 <nav>
-                    <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Search to know</h6>
+                    <h6 className="footer-title text-amber-500 md:text-lg font-semibold">Search to know</h6>
                     <NavLink to='/about-us'>About Us</NavLink>
                     <NavLink to='/support'>Support</NavLink>
                     
-                    <h6 className="footer-title text-blue-400 md:text-lg font-semibold">Find Us</h6>
+                    <h6 className="footer-title text-amber-500 md:text-lg font-semibold">Find Us</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a href="https://twitter.com/"
                             target="_blank"

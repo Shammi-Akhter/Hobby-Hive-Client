@@ -184,7 +184,7 @@ const UpdateGroup = () => {
               name="startDate"
               value={formData.startDate}
               onChange={handleChange}
-              className="w-full border bg-cyan-500 p-2 rounded"
+              className="w-full border bg-amber-500 hover:bg-amber-400 cursor-pointer p-2 rounded"
               required
             />
 
@@ -215,7 +215,7 @@ const UpdateGroup = () => {
 
             <button
               type="submit"
-              className="w-full bg-cyan-600 hover:bg-purple-600 text-white font-semibold py-2 rounded-xl transition duration-200"
+              className="w-full bg-amber-500 hover:bg-amber-400 cursor-pointer text-white font-semibold py-2 rounded-xl transition duration-200"
             >
               Update
             </button>

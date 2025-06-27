@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const NewsletterSection = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+    if (!gmailRegex.test(email)) {
+      toast.error('Please enter a valid Gmail address');
+      return;
+    }
+
+    toast.success('Thank you for your subscription!');
+    setEmail(''); // Clear input
+  };
+
   return (
     <div className="py-10 px-4 sm:px-6 lg:px-8 lg:my-10">
       <div className="max-w-3xl mx-auto text-center">
@@ -8,16 +25,21 @@ const NewsletterSection = () => {
         <p className="text-gray-600 mb-6">
           Subscribe to our newsletter to receive the latest updates on new hobby groups, events, and exclusive offers.
         </p>
-        <form className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <form
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          onSubmit={handleSubscribe}
+        >
           <input
             type="email"
             required
-            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your Gmail"
             className="w-full sm:w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
           <button
             type="submit"
-            className="px-6 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-400 transition"
+            className="px-6 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-400 cursor-pointer transition"
           >
             Subscribe
           </button>
