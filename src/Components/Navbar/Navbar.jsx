@@ -12,7 +12,7 @@ const Navbar = () => {
   const defaultAvatar = 'https://i.ibb.co/ZYW3VTp/brown-brim.png'; 
 
   return (
-    <div className="sticky top-0 left-0 w-full z-50 bg-white text-black nav border-b-2 border-white">
+    <div className="sticky top-0 left-0 w-full z-50 bg-white text-black nav border-b-2  border-white">
       <div className="container  mx-auto navbar lg:flex">
       
         <div className="navbar-start">

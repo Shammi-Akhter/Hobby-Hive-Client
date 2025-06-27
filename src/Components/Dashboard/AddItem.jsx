@@ -64,7 +64,7 @@ const CreateGroup = () => {
             if (res.ok) {
                 toast.success('Group Created successfully!');
 
-                navigate('/my-group-page');
+                navigate('/dashboard/my-items');
 
                 setFormData({
                     groupName: '',

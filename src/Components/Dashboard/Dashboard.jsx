@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const navLinks = [
   { to: '', label: 'Overview' },
   { to: 'all-items', label: 'All Groups' },
-  { to: 'add-item', label: 'Add Group' },
+  { to: 'add-item', label: 'Create Group' },
   { to: 'my-items', label: 'My Group' },
 ];
 
 const Dashboard = () => {
   const location = useLocation();
   return (
+   <div>
+     <Helmet>
+            <title>AllGroupPage | HobbyHive</title>
+          </Helmet>
     <div className=" flex flex-col bg-gray-100 overflow-visible">
       
       <div className="flex flex-1 ">
@@ -37,6 +42,7 @@ const Dashboard = () => {
       </div>
       
     </div>
+   </div>
   );
 };
 

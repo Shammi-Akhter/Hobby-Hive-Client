@@ -107,7 +107,7 @@ const UpdateGroup = () => {
       if (res.ok) {
         toast.success('Group updated successfully!');
 
-        navigate('/my-group-page');
+        navigate('/dashboard/my-items');
       } else {
         const err = await res.json();
         toast.error(err.message || 'Update failed');
